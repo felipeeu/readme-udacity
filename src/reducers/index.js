@@ -8,8 +8,5 @@ function categories(state=[], action) {
         default:
             return state
     }
-
-
 }
-
 export default categories
