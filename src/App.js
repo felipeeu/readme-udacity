@@ -1,24 +1,19 @@
 import React, {Component} from 'react';
 import './App.css';
-import {withRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+//import {withRouter} from 'react-router-dom';
+//import {connect} from 'react-redux';
 
-import {getCategories} from '../src/actions';
 
+
+
+//components
+import Categories from '../src/components/Categories'
 
 class App extends Component {
 
-    static propTypes = {
-        categories: PropTypes.array
-    };
-
-    componentDidMount() {
-        this.props.getCategories();
-    }
 
     render() {
-        const {categories} = this.props;
+
         return (
             <div className="App">
                 <header className="App-header">
@@ -26,16 +21,7 @@ class App extends Component {
                 </header>
                 <div className="allcategories">
                     <div>
-                        <h6>Categories</h6>
-                        {categories &&
-                        categories.map(category => (
-                            <ol>
-                                <li key={category.name}>
-                                    <button>{category.name}</button>
-                                </li>
-                            </ol>
-                        ))}
-                        {console.log(this.props)}
+                        <Categories/>
                     </div>
                 </div>
             </div>
@@ -44,15 +30,7 @@ class App extends Component {
     }
 }
 
-function mapStateToProps({categories}) {
-    return {
-        categories:categories
-    };
-}
 
-export default withRouter(
-    connect(mapStateToProps, {
-        getCategories
-    })(App)
-);
+
+export default App;
 
