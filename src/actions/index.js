@@ -1,8 +1,7 @@
-
-
 export const REQUEST_CATEGORIES = 'REQUEST_CATEGORIES';
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
-
+export const REQUEST_POST = 'REQUEST_POST';
+export const RECEIVE_POST = 'RECEIVE_POST';
 
 function requestCategories() {
     return {
@@ -14,6 +13,21 @@ function receiveCategories(json) {
     return {
         type: RECEIVE_CATEGORIES,
         categories: json.categories,
+        receivedAt: Date.now()
+    }
+}
+
+
+function requestPosts() {
+    return {
+        type: REQUEST_POST
+    }
+}
+
+function receivePosts(json) {
+    return {
+        type: RECEIVE_POST,
+        posts: json,
         receivedAt: Date.now()
     }
 }
@@ -33,8 +47,6 @@ const headers = {
     'Content-Type': 'application/json'}
 
 
-
-
 export function getCategories() {
     return function (dispatch) {
         dispatch(requestCategories())
@@ -45,3 +57,12 @@ export function getCategories() {
     }
 }
 
+export function getPosts() {
+    return function (dispatch) {
+        dispatch(requestPosts())
+        return fetch(`${api}/posts`, {headers})
+            .then(response => response.json())
+            .then(json => dispatch(receivePosts(json))
+            )
+    }
+}

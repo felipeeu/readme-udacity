@@ -35,7 +35,7 @@ class Categories extends Component {
     }
 }
 
-function mapStateToProps({categories}) {
+function mapStateToProps(categories) {
     return {
         categories: categories
     }

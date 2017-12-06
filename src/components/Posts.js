@@ -17,20 +17,22 @@ class Posts extends Component {
     render() {
         const {posts} = this.props;
         return (
-        <div>
-            <h6>Posts</h6>
-            <ol>
+            <div>
+                <h6>Posts</h6>
+
                 {posts &&
                 posts.map(post => (
-                    <li key={post.id}>
+
+                    <div  key={post.id}>
                         <p>{post.title}</p>
-                    </li>
+                        <p><span className="post-body">{post.body}</span></p>
+
+                    </div>
+
                 ))}
-            </ol>
+            </div>
 
-        </div>
-
-    )
+        )
     }
 
 }
@@ -41,6 +43,13 @@ function mapStateToProps(posts) {
     }
 }
 
-export default withRouter(connect(mapStateToProps, {getPosts})(Posts))
+function mapDispatchToProps(dispatch) {
+    return {
+        getPosts: () => dispatch(getPosts())
+    }
+}
+
+export default withRouter(connect(mapStateToProps
+    , mapDispatchToProps)(Posts))
 
 

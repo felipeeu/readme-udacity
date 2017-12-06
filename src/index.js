@@ -9,6 +9,7 @@ import {BrowserRouter} from 'react-router-dom';
 import reducer from "./reducers/index";
 
 
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
@@ -17,6 +18,7 @@ const store = createStore(
         applyMiddleware(thunk)
     )
 )
+
 
 ReactDOM.render(
     <BrowserRouter>

@@ -6,7 +6,8 @@ import './App.css';
 
 //components
 import Categories from '../src/components/Categories'
-//import Posts from '../src/components/Posts'
+
+import Posts from '../src/components/Posts'
 
 class App extends Component {
 
@@ -25,7 +26,7 @@ class App extends Component {
                 </div>
                 <div className="allposts">
                     <div>
-
+                        <Posts/>
                     </div>
                 </div>
 

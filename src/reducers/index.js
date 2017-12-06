@@ -1,6 +1,10 @@
+import {combineReducers} from 'redux'
+
 import {
     REQUEST_CATEGORIES,
-    RECEIVE_CATEGORIES
+    RECEIVE_CATEGORIES,
+    REQUEST_POST,
+    RECEIVE_POST
 } from '../actions'
 
 const initialCategoryState = {
@@ -8,8 +12,15 @@ const initialCategoryState = {
     categories: []
 }
 
-function categories (state = initialCategoryState, action) {
-    switch(action.type) {
+const initialPostState = {
+    isFetching: false,
+    posts: []
+
+}
+
+function categories(state = initialCategoryState, action) {
+
+    switch (action.type) {
         case REQUEST_CATEGORIES:
             return {
                 ...state,
@@ -26,4 +37,30 @@ function categories (state = initialCategoryState, action) {
     }
 }
 
-export default categories
+
+function posts(state = initialPostState, action) {
+
+    switch (action.type) {
+        case REQUEST_POST:
+            return {
+                ...state,
+                isFetching: true
+            }
+        case RECEIVE_POST:
+            return {
+                ...state,
+                isFetching: false,
+                posts: action.posts
+            }
+        default:
+            return state
+    }
+}
+
+//const rootReducer = combineReducers({categories , posts})
+//export default rootReducer
+//export default posts
+export default combineReducers({
+    posts,
+    categories}
+);
