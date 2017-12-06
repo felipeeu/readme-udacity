@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getCategories} from '../actions';
@@ -24,7 +24,9 @@ class Categories extends Component {
                     {categories &&
                     categories.map(category => (
                         <li key={category.name}>
-                            <button>{category.name}</button>
+                            <Link to={`/${category.path}`}>
+                                <button>{category.name}</button>
+                            </Link>
                         </li>
                     ))}
                 </ol>
@@ -33,13 +35,24 @@ class Categories extends Component {
     }
 }
 
-function mapStateToProps(categories) {
+function mapStateToProps({categories}) {
     return {
         categories: categories
-    };
+    }
 }
+
+function mapDispatchToProps(dispatch) {
+    return {
+        getCategories: () => dispatch(getCategories())
+    }
+}
+
+
 export default withRouter(
-    connect(mapStateToProps, {
-        getCategories
-    })(Categories)
-);
+    connect(mapStateToProps, mapDispatchToProps)(Categories)
+)
+
+
+
+
+

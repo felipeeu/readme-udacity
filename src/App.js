@@ -4,10 +4,9 @@ import './App.css';
 //import {connect} from 'react-redux';
 
 
-
-
 //components
 import Categories from '../src/components/Categories'
+//import Posts from '../src/components/Posts'
 
 class App extends Component {
 
@@ -24,12 +23,18 @@ class App extends Component {
                         <Categories/>
                     </div>
                 </div>
+                <div className="allposts">
+                    <div>
+
+                    </div>
+                </div>
+
+
             </div>
 
         );
     }
 }
-
 
 
 export default App;
