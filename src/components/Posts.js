@@ -23,18 +23,14 @@ class Posts extends Component {
                 {posts &&
                 posts.map(post => (
 
-                    <div  key={post.id}>
+                    <div key={post.id}>
                         <p>{post.title}</p>
                         <p><span className="post-body">{post.body}</span></p>
-
                     </div>
-
                 ))}
             </div>
-
         )
     }
-
 }
 
 function mapStateToProps(posts) {
