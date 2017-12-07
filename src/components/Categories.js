@@ -15,29 +15,28 @@ class Categories extends Component {
     }
 
     render() {
-        const {categories} = this.props;
+        const {allcategories} = this.props;
+
         return (
 
             <div>
                 <h6>Categories</h6>
-                <ol>
-                    {categories &&
-                    categories.map(category => (
-                        <li key={category.name}>
+                    {allcategories &&
+                    allcategories.map(category => (
+                        <div key={category.name}>
                             <Link to={`/${category.path}`}>
                                 <button>{category.name}</button>
                             </Link>
-                        </li>
+                        </div>
                     ))}
-                </ol>
             </div>
         )
     }
 }
 
-function mapStateToProps(categories) {
+function mapStateToProps({categories}) {
     return {
-        categories: categories
+       allcategories:categories
     }
 }
 

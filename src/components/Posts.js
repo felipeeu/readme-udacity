@@ -15,13 +15,13 @@ class Posts extends Component {
     }
 
     render() {
-        const {posts} = this.props;
+        const {allposts} = this.props;
         return (
             <div>
                 <h6>Posts</h6>
 
-                {posts &&
-                posts.map(post => (
+                {allposts &&
+                allposts.map(post => (
 
                     <div key={post.id}>
                         <p>{post.title}</p>
@@ -33,10 +33,11 @@ class Posts extends Component {
     }
 }
 
-function mapStateToProps(posts) {
+function mapStateToProps({posts}) {
     return {
-        posts: posts
+        allposts: posts
     }
+
 }
 
 function mapDispatchToProps(dispatch) {

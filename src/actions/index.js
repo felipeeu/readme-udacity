@@ -5,17 +5,17 @@ export const GET_POST = 'GET_POST'
 
 
 
+
 export const getCategories = () => {
     return dispatch => {
         API.fetchCategories().then(payload => {
             dispatch({
                 type: GET_CATEGORY,
                 payload
-
-            });
-        });
-    };
-};
+            })
+        })
+    }
+}
 
 export const getPosts = () => {
     return dispatch => {
@@ -23,8 +23,19 @@ export const getPosts = () => {
             dispatch({
                 type: GET_POST,
                 posts
-            });
-        });
-    };
-};
+            })
+        })
+    }
+}
 
+
+export const getComments = () => {
+    return dispatch => {
+        API.fetchPosts().then(posts => {
+            dispatch({
+                type: GET_POST,
+                posts
+            })
+        })
+    }
+}
