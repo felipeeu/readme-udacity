@@ -3,6 +3,7 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getPosts} from '../actions';
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 class Posts extends Component {
 
@@ -23,9 +24,33 @@ class Posts extends Component {
                 {allposts &&
                 allposts.map(post => (
 
-                    <div key={post.id}>
-                        <p>{post.title}</p>
-                        <p><span className="post-body">{post.body}</span></p>
+                    <div key={post.id} className="post-body">
+
+                        <Card>
+                            <Image src='/assets/images/avatar/large/matthew.png' />
+                            <Card.Content>
+                                <Card.Header>
+                                    {post.title}
+                                </Card.Header>
+                                <Card.Meta>
+        <span className='date'>
+            {post.author}
+        </span>
+                                </Card.Meta>
+                                <Card.Description>
+                                    {post.body}
+                                </Card.Description>
+                            </Card.Content>
+                            <Card.Content extra>
+                                <a>
+                                    <Icon name='user' />
+                                    {post.category}
+                                </a>
+                            </Card.Content>
+                        </Card>
+
+
+
                     </div>
                 ))}
             </div>

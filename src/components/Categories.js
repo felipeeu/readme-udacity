@@ -23,9 +23,9 @@ class Categories extends Component {
                 <h6>Categories</h6>
                     {allcategories &&
                     allcategories.map(category => (
-                        <div key={category.name}>
+                        <div key={category.name} className="categories-bar">
                             <Link to={`/${category.path}`}>
-                                <button>{category.name}</button>
+                                <button className="ui black button">{category.name}</button>
                             </Link>
                         </div>
                     ))}
