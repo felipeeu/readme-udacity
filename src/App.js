@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-
+import {Route , Link} from 'react-router-dom';
 
 
 //components
 import Categories from '../src/components/Categories'
-
 import Posts from '../src/components/Posts'
+import Form from '../src/components/Form'
 
 class App extends Component {
 
@@ -27,8 +27,10 @@ class App extends Component {
                     <div>
                         <Posts/>
                     </div>
+                    <Route path="/form" render={({history}) => (
+                        <Form/>)}/>
                 </div>
-
+                <Link to='/form' > <button>add-post</button></Link>
             </div>
 
         );
