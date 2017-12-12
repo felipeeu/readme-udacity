@@ -3,16 +3,17 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getPosts} from '../actions';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import {Card, Icon, Image} from 'semantic-ui-react'
+import Comments from "./Comments";
 
 class Posts extends Component {
 
     static propTypes = {
-        props: PropTypes.array
+        posts: PropTypes.array
     };
 
     componentDidMount() {
-        this.props.getPosts();
+        this.props.getPosts()
     }
 
     render() {
@@ -27,7 +28,7 @@ class Posts extends Component {
                     <div key={post.id} className="post-body">
 
                         <Card>
-                            <Image src='/assets/images/avatar/large/matthew.png' />
+                            <Image src='/assets/images/avatar/large/matthew.png'/>
                             <Card.Content>
                                 <Card.Header>
                                     {post.title}
@@ -43,31 +44,32 @@ class Posts extends Component {
                             </Card.Content>
                             <Card.Content extra>
                                 <a>
-                                    <Icon name='user' />
+                                    <Icon name='user'/>
                                     {post.category}
                                 </a>
                             </Card.Content>
                         </Card>
-
-
-
+                        <Comments post={post}/>
                     </div>
-                ))}
+                    ))}
             </div>
         )
     }
 }
 
-function mapStateToProps({posts}) {
+function mapStateToProps({posts}, {comments}) {
+
     return {
-        allposts: posts
+        allposts: posts,
+
     }
 
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, parentId) {
     return {
-        getPosts: () => dispatch(getPosts())
+        getPosts: () => dispatch(getPosts()),
+
     }
 }
 

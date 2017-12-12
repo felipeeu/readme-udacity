@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import {GET_CATEGORY , GET_POST} from "../actions/index";
+import {GET_CATEGORY , GET_POST ,GET_COMMENT_BY_POST} from "../actions/index";
 
 
 
@@ -20,7 +20,20 @@ function posts (state=[], action) {
             return action.posts
         default:
             return state
+
     }
 }
 
-export default combineReducers({categories, posts})
+function comments (state=[], action) {
+const {comments , parentId} = action
+    //console.log(action)
+    switch(action.type) {
+        case GET_COMMENT_BY_POST:
+            return { ...state, [parentId]: comments }
+        default:
+            return state
+    }
+
+}
+
+export default combineReducers({categories, posts , comments})

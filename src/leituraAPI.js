@@ -23,3 +23,8 @@ export const fetchPosts = () => {
 
 }
 
+export const fetchCommentsByParentId = (parentId) => {
+    return fetch(`${API}/posts/${parentId}/comments`, { headers })
+        .then(res => res.json())
+
+}

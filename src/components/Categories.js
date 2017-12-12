@@ -35,9 +35,12 @@ class Categories extends Component {
 }
 
 function mapStateToProps({categories}) {
+
     return {
        allcategories:categories
+
     }
+
 }
 
 function mapDispatchToProps(dispatch) {
