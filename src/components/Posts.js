@@ -40,6 +40,7 @@ class Posts extends Component {
                                 </Card.Meta>
                                 <Card.Description>
                                     {post.body}
+                                    <Comments post={post}/>
                                 </Card.Description>
                             </Card.Content>
                             <Card.Content extra>
@@ -49,7 +50,7 @@ class Posts extends Component {
                                 </a>
                             </Card.Content>
                         </Card>
-                        <Comments post={post}/>
+
                     </div>
                     ))}
             </div>

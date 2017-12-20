@@ -24,9 +24,9 @@ function posts (state=[], action) {
     }
 }
 
-function comments (state=[], action) {
+function comments (state={}, action) {
 const {comments , parentId} = action
-    //console.log(action)
+//console.log(comments)
     switch(action.type) {
         case GET_COMMENT_BY_POST:
             return { ...state, [parentId]: comments }

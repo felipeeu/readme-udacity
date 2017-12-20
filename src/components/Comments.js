@@ -10,28 +10,36 @@ class Comments extends Component {
     }
 
     render() {
-       // const {post} = this.props;
+        const {allcomments} = this.props;
+
         return (
             <div>
+                {allcomments &&
+                allcomments.map(comment => (
 
+                    <div key={comment.id} className="comment">
+                        <p>Comment</p>
+                        <p>{comment.body}</p>
+                    </div>
+                ))}
             </div>
+
         )
     }
 }
 
-function mapStateToProps({comments},{post}) {
+function mapStateToProps({comments}, {post}) {
 
     return {
 
-        comments: comments
+        allcomments: comments[post.id]
     }
-
 }
 
 
-function mapDispatchToProps(dispatch, parentId) {
+function mapDispatchToProps(dispatch , parentID) {
     return {
-        getCommentsByPosts: () => dispatch(getCommentsByPosts(parentId))
+        getCommentsByPosts: (parentID) => dispatch(getCommentsByPosts(parentID))
     }
 }
 
