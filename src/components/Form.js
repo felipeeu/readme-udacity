@@ -1,19 +1,36 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {newPost} from '../actions';
+import {guid} from "../utils";
 
 
 class Form extends Component {
+    addNewPost = e => {
+
+        const submitPost = {
+            id: guid(),
+            title: e.target.title.value
+        };
+        this.props.newPost(submitPost)
+    };
+
+
     render() {
+
         return (
-            <div className= "form">
-                <Link to='/'><button>Close</button></Link>
-                <form className="ui form">
+            <div className="form">
+                <Link to='/'>
+                    <button>Close</button>
+                </Link>
+                <form onSubmit={this.addNewPost} className="ui form">
                     <div className="equal width fields">
                         <div className="field">
-                            <label>First name</label>
+                            <label>Title</label>
                             <div className="ui input">
-                                <input type="text" placeholder="First name"/>
+                                <input type="text" placeholder="Title"/>
                             </div>
+                            <button type="submit">submit</button>
                         </div>
                     </div>
                 </form>
@@ -22,4 +39,21 @@ class Form extends Component {
     }
 }
 
-export default Form;
+
+function mapStateToProps() {
+
+    return {
+
+
+    }
+}
+
+
+function mapDispatchToProps(dispatch, submitPost, callback) {
+    return {
+        newPost: (submitPost, callback) => dispatch(newPost(submitPost, callback))
+    }
+}
+
+export default withRouter(connect(mapStateToProps
+    , mapDispatchToProps)(Form))

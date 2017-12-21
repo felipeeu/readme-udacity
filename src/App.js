@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route , Link} from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
 
 
 //components
@@ -16,7 +16,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <h1 className="App-title">Leitura-Udacity</h1>
+                    <Link to="/"><h1 className="App-title">Leitura-Udacity</h1></Link>
                 </header>
                 <div className="allcategories">
                     <div>
@@ -30,7 +30,9 @@ class App extends Component {
                     <Route path="/form" render={({history}) => (
                         <Form/>)}/>
                 </div>
-                <Link to='/form' > <button>add-post</button></Link>
+                <Link to='/form'>
+                    <button>add-post</button>
+                </Link>
             </div>
 
         );

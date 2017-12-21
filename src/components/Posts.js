@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {Link, Route, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getPosts} from '../actions';
-import {Card, Icon, Image} from 'semantic-ui-react'
+import {Card, Icon} from 'semantic-ui-react'
 import Comments from "./Comments";
 
 class Posts extends Component {
@@ -28,11 +28,12 @@ class Posts extends Component {
                     <div key={post.id} className="post-body">
 
                         <Card>
-                            <Image src='/assets/images/avatar/large/matthew.png'/>
                             <Card.Content>
-                                <Card.Header>
-                                    {post.title}
-                                </Card.Header>
+                                <Link to={`/post/${post.id}`}>
+                                    <Card.Header>
+                                        {post.title}
+                                    </Card.Header>
+                                </Link>
                                 <Card.Meta>
         <span className='date'>
             {post.author}
@@ -40,7 +41,8 @@ class Posts extends Component {
                                 </Card.Meta>
                                 <Card.Description>
                                     {post.body}
-                                    <Comments post={post}/>
+                                    <Route path={`/post/${post.id}`} render={({history}) => (
+                                        <Comments post={post}/>)}/>
                                 </Card.Description>
                             </Card.Content>
                             <Card.Content extra>
@@ -52,7 +54,7 @@ class Posts extends Component {
                         </Card>
 
                     </div>
-                    ))}
+                ))}
             </div>
         )
     }

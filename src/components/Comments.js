@@ -39,8 +39,8 @@ function mapStateToProps({comments}, {post}) {
 
 function mapDispatchToProps(dispatch , parentID) {
     return {
-        getCommentsByPosts: (parentID) => dispatch(getCommentsByPosts(parentID))
-    }
+    getCommentsByPosts: (parentID) => dispatch(getCommentsByPosts(parentID))
+}
 }
 
 export default withRouter(connect(mapStateToProps

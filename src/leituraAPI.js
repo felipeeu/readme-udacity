@@ -9,22 +9,33 @@ export const headers = {
     'Authorization': token,
     'Content-Type': 'application/json'
 }
-
+//Categories
 export const fetchCategories = () => {
-    return fetch(`${API}/categories`, { headers })
+    return fetch(`${API}/categories`, {headers})
         .then(res => res.json())
         .then(data => data.categories)
 }
 
-
+//Posts
 export const fetchPosts = () => {
-    return fetch(`${API}/posts`, { headers })
+    return fetch(`${API}/posts`, {headers})
         .then(res => res.json())
 
 }
 
+export const addPost = (post) => {
+    return fetch(`${API}/posts`,
+        {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(post)
+        })
+}
+
+
+//Comments
 export const fetchCommentsByParentId = (parentId) => {
-    return fetch(`${API}/posts/${parentId}/comments`, { headers })
+    return fetch(`${API}/posts/${parentId}/comments`, {headers})
         .then(res => res.json())
 
 }
