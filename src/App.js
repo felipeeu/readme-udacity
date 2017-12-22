@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route, Link} from 'react-router-dom';
+import {Route, Link , Switch} from 'react-router-dom';
 
 
 //components
@@ -18,6 +18,9 @@ class App extends Component {
                 <header className="App-header">
                     <Link to="/"><h1 className="App-title">Leitura-Udacity</h1></Link>
                 </header>
+                <Link to='/form'>
+                    <button>add-post</button>
+                </Link>
                 <div className="allcategories">
                     <div>
                         <Categories/>
@@ -25,14 +28,13 @@ class App extends Component {
                 </div>
                 <div className="allposts">
                     <div>
-                        <Posts/>
+                        <Switch>
+                            <Route exact path="/" component={Posts}/>
+                            <Route path="/form" component={Form}/>
+                        </Switch>
                     </div>
-                    <Route path="/form" render={({history}) => (
-                        <Form/>)}/>
                 </div>
-                <Link to='/form'>
-                    <button>add-post</button>
-                </Link>
+               
             </div>
 
         );

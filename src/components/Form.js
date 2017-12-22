@@ -28,7 +28,7 @@ class Form extends Component {
                         <div className="field">
                             <label>Title</label>
                             <div className="ui input">
-                                <input type="text" placeholder="Title"/>
+                                <input type="text" name="title" className="form-control" placeholder="Title"/>
                             </div>
                             <button type="submit">submit</button>
                         </div>
@@ -49,9 +49,9 @@ function mapStateToProps() {
 }
 
 
-function mapDispatchToProps(dispatch, submitPost, callback) {
+function mapDispatchToProps(dispatch, submitPost) {
     return {
-        newPost: (submitPost, callback) => dispatch(newPost(submitPost, callback))
+        newPost: (submitPost) => dispatch(newPost(submitPost))
     }
 }
 

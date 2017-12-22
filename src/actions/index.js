@@ -32,16 +32,18 @@ export const getPosts = () => {
     }
 }
 
+
 export const newPost = (post, callback) => {
     return dispatch => {
-        API.addPost(post).then(() => callback())
+        API.addPost(post).then(() => callback());
         dispatch({
             type: ADD_POST,
             post
         })
-        console.log(post)
     }
 }
+
+
 
 //Comments actions
 export const getCommentsByPosts = parentId => {
