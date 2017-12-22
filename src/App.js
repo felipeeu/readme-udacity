@@ -19,7 +19,12 @@ class App extends Component {
                     <Link to="/"><h1 className="App-title">Leitura-Udacity</h1></Link>
                 </header>
                 <Link to='/form'>
-                    <button>add-post</button>
+                    <button className="ui animated button">
+                        <div className="visible content">New Post</div>
+                        <div className="hidden content">
+                            <i aria-hidden="true" className="plus icon"/>
+                        </div>
+                    </button>
                 </Link>
                 <div className="allcategories">
                     <div>
@@ -34,7 +39,7 @@ class App extends Component {
                         </Switch>
                     </div>
                 </div>
-               
+
             </div>
 
         );

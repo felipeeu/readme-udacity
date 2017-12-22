@@ -19,12 +19,12 @@ class Posts extends Component {
     render() {
         const {allposts} = this.props;
         return (
+
             <div>
                 <h6>Posts</h6>
 
                 {allposts &&
                 allposts.map(post => (
-
                     <div key={post.id} className="post-body">
 
                         <Card>
@@ -47,12 +47,11 @@ class Posts extends Component {
                             </Card.Content>
                             <Card.Content extra>
                                 <a>
-                                    <Icon name='user'/>
+                                    <Icon name='barcode'/>
                                     {post.category}
                                 </a>
                             </Card.Content>
                         </Card>
-
                     </div>
                 ))}
             </div>

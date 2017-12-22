@@ -21,8 +21,6 @@
 
     display: flex;
     justify-content: space-around;
-
-
 }
 
 .categories-bar {
@@ -34,4 +32,8 @@
 
     display: inline-flex;
 
+}
+
+.submit{
+    padding-top: 20%;
 }
