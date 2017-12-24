@@ -1,12 +1,19 @@
 import {combineReducers} from 'redux'
-import {GET_CATEGORY, GET_POST, GET_COMMENT_BY_POST, ADD_POST} from "../actions/index";
+import {
+    GET_CATEGORY,
+    GET_POST,
+    GET_COMMENT_BY_POST,
+    ADD_POST,
+    GET_POST_BY_CATEGORY,
+    DELETE_POST
+} from "../actions/index";
 
 //Categories
 function categories(state = [], action) {
 
     switch (action.type) {
         case GET_CATEGORY:
-            return action.payload
+            return action.payload;
         default:
             return state
     }
@@ -14,12 +21,16 @@ function categories(state = [], action) {
 
 //Posts
 function posts(state = [], action) {
-    const {post} = action
+    const {post, posts, id} = action;
     switch (action.type) {
         case GET_POST:
-            return action.posts
+            return action.posts;
         case ADD_POST:
-            return state.concat([post])
+            return state.concat([post]);
+        case GET_POST_BY_CATEGORY:
+            return posts.filter(post => !post.deleted);
+        case DELETE_POST:
+            return state.filter(post => post.id !== id);
         default:
             return state
 
@@ -28,11 +39,10 @@ function posts(state = [], action) {
 
 //Comments
 function comments(state = {}, action) {
-    const {comments, parentId} = action
-//console.log(comments)
+    const {comments, parentId} = action;
     switch (action.type) {
         case GET_COMMENT_BY_POST:
-            return {...state, [parentId]: comments}
+            return {...state, [parentId]: comments};
         default:
             return state
     }

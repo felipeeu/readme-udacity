@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-import {Link, Route, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {getPosts} from '../actions';
-import {Card, Icon} from 'semantic-ui-react'
+import {deletePost} from '../actions';
+import {Card, Icon} from 'semantic-ui-react';
 import Comments from "./Comments";
+
+
 
 class Posts extends Component {
 
@@ -16,10 +19,14 @@ class Posts extends Component {
         this.props.getPosts()
     }
 
+    onClickDeletePost = (id) => {
+        this.props.deletePost(id)
+    }
+
     render() {
         const {allposts} = this.props;
-        return (
 
+        return (
             <div>
                 <h6>Posts</h6>
 
@@ -29,11 +36,9 @@ class Posts extends Component {
 
                         <Card>
                             <Card.Content>
-                                <Link to={`/post/${post.id}`}>
-                                    <Card.Header>
-                                        {post.title}
-                                    </Card.Header>
-                                </Link>
+                                <Card.Header>
+                                    {post.title}
+                                </Card.Header>
                                 <Card.Meta>
         <span className='date'>
             {post.author}
@@ -41,8 +46,7 @@ class Posts extends Component {
                                 </Card.Meta>
                                 <Card.Description>
                                     {post.body}
-                                    <Route path={`/post/${post.id}`} render={({history}) => (
-                                        <Comments post={post}/>)}/>
+                                    <Comments post={post}/>
                                 </Card.Description>
                             </Card.Content>
                             <Card.Content extra>
@@ -50,6 +54,7 @@ class Posts extends Component {
                                     <Icon name='barcode'/>
                                     {post.category}
                                 </a>
+                                <button onClick={()=> this.onClickDeletePost(post.id)}>delete</button>
                             </Card.Content>
                         </Card>
                     </div>
@@ -59,19 +64,20 @@ class Posts extends Component {
     }
 }
 
-function mapStateToProps({posts}, {comments}) {
+function mapStateToProps({posts}) {
 
     return {
-        allposts: posts,
+        allposts: posts
+
 
     }
 
 }
 
-function mapDispatchToProps(dispatch, parentId) {
+function mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
-
+        deletePost: (id) => dispatch(deletePost(id))
     }
 }
 

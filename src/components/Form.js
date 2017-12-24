@@ -23,10 +23,9 @@ class Form extends Component {
         return (
             <div><h6>Add new post</h6>
                 <div className="form">
-
                     <Link to='/'>
                         <button className="ui icon basic button">
-                            <i aria-hidden="true" className="window close icon"></i>
+                            <i aria-hidden="true" className="window close icon"/>
                         </button>
                     </Link>
                     <form onSubmit={this.addNewPost} className="ui form">
@@ -64,7 +63,7 @@ function mapStateToProps() {
 }
 
 
-function mapDispatchToProps(dispatch, submitPost) {
+function mapDispatchToProps(dispatch) {
     return {
         newPost: (submitPost) => dispatch(newPost(submitPost))
     }

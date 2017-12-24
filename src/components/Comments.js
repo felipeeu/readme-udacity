@@ -14,12 +14,14 @@ class Comments extends Component {
 
         return (
             <div>
+                <h6>Comments</h6>
                 {allcomments &&
                 allcomments.map(comment => (
-
                     <div key={comment.id} className="comment">
-                        <p>Comment</p>
-                        <p>{comment.body}</p>
+                        <ul>
+                            <li>{comment.body}</li>
+                        </ul>
+
                     </div>
                 ))}
             </div>
@@ -31,16 +33,14 @@ class Comments extends Component {
 function mapStateToProps({comments}, {post}) {
 
     return {
-
         allcomments: comments[post.id]
     }
 }
 
-
-function mapDispatchToProps(dispatch , parentID) {
+function mapDispatchToProps(dispatch, parentID) {
     return {
-    getCommentsByPosts: (parentID) => dispatch(getCommentsByPosts(parentID))
-}
+        getCommentsByPosts: (parentID) => dispatch(getCommentsByPosts(parentID))
+    }
 }
 
 export default withRouter(connect(mapStateToProps
