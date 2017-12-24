@@ -68,10 +68,7 @@ function mapStateToProps({posts}) {
 
     return {
         allposts: posts
-
-
     }
-
 }
 
 function mapDispatchToProps(dispatch) {
