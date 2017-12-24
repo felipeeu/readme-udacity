@@ -8,6 +8,7 @@ import Categories from '../src/components/Categories'
 import Posts from '../src/components/Posts'
 import Form from '../src/components/Form'
 
+
 class App extends Component {
 
 
@@ -28,14 +29,14 @@ class App extends Component {
                 </Link>
                 <div className="allcategories">
                     <div>
-                        <Categories/>
+                        <Categories />
                     </div>
                 </div>
                 <div className="allposts">
                     <div>
                         <Switch>
                             <Route exact path="/" component={Posts}/>
-                            <Route path="/form" component={Form}/>
+                            <Route exact path="/form" component={Form}/>
                         </Switch>
                     </div>
                 </div>
@@ -45,6 +46,10 @@ class App extends Component {
         );
     }
 }
+
+
+
+
 
 
 export default App;

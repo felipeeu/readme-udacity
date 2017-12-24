@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getCategories} from '../actions';
+import {getCategories} from '../actions'
+import {getPostByCategory} from '../actions';
 
 class Categories extends Component {
 
@@ -10,25 +11,27 @@ class Categories extends Component {
         categories: PropTypes.array
     };
 
+    onClickCategories = (category) => {
+        this.props.getPostByCategory(category)
+    };
+
     componentDidMount() {
         this.props.getCategories();
-    }
+    };
 
     render() {
         const {allcategories} = this.props;
 
         return (
-
             <div>
                 <h6>Categories</h6>
-                    {allcategories &&
-                    allcategories.map(category => (
-                        <div key={category.name} className="categories-bar">
-                            <Link to={`/${category.path}`}>
-                                <button className="ui black button">{category.name}</button>
-                            </Link>
-                        </div>
-                    ))}
+                {allcategories &&
+                allcategories.map(category => (
+                    <div key={category.name} className="categories-bar">
+                        <button onClick={() => this.onClickCategories(category.name)}
+                                className="ui black button">{category.name}</button>
+                    </div>
+                ))}
             </div>
         )
     }
@@ -37,18 +40,17 @@ class Categories extends Component {
 function mapStateToProps({categories}) {
 
     return {
-       allcategories:categories
-
+        allcategories: categories,
     }
-
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getCategories: () => dispatch(getCategories())
+        getCategories: () => dispatch(getCategories()),
+        getPostByCategory: (category) => dispatch(getPostByCategory(category))
+
     }
 }
-
 
 export default withRouter(
     connect(mapStateToProps, mapDispatchToProps)(Categories)
