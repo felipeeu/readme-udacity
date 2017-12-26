@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getPosts} from '../actions';
-import {deletePost} from '../actions';
+import {getPosts,deletePost} from '../actions';
 import {Card, Icon} from 'semantic-ui-react';
 import Comments from "./Comments";
 
@@ -25,6 +24,7 @@ class Posts extends Component {
 
     render() {
         const {allposts} = this.props;
+
 
         return (
             <div>
@@ -54,7 +54,11 @@ class Posts extends Component {
                                     <Icon name='barcode'/>
                                     {post.category}
                                 </a>
-                                <button onClick={()=> this.onClickDeletePost(post.id)}>delete</button>
+                                <p>{Date(post.timestamp)}</p>
+
+                                <button onClick={()=> this.onClickDeletePost(post.id)} className="ui icon basic button" id = "deleteButton">
+                                    <i aria-hidden="true" className="trash icon"/>
+                                </button>
                             </Card.Content>
                         </Card>
                     </div>

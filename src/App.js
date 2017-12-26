@@ -6,7 +6,7 @@ import {Route, Link , Switch} from 'react-router-dom';
 //components
 import Categories from '../src/components/Categories'
 import Posts from '../src/components/Posts'
-import Form from '../src/components/Form'
+import Newpost from './components/Newpost'
 
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
                 <header className="App-header">
                     <Link to="/"><h1 className="App-title">Leitura-Udacity</h1></Link>
                 </header>
-                <Link to='/form'>
+                <Link to='/newpost'>
                     <button className="ui animated button">
                         <div className="visible content">New Post</div>
                         <div className="hidden content">
@@ -36,7 +36,7 @@ class App extends Component {
                     <div>
                         <Switch>
                             <Route exact path="/" component={Posts}/>
-                            <Route exact path="/form" component={Form}/>
+                            <Route exact path="/newpost" component={Newpost}/>
                         </Switch>
                     </div>
                 </div>
@@ -46,10 +46,6 @@ class App extends Component {
         );
     }
 }
-
-
-
-
 
 
 export default App;
