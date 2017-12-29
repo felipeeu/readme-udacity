@@ -1,0 +1,74 @@
+import React, {Component} from 'react';
+import {Link, withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {newComment} from '../actions';
+import {guid} from "../utils";
+
+
+class Newcomment extends Component {
+
+    addNewComment = e => {
+        const parentId = this.props.parentId
+        const submitComment = {
+            id: guid(),
+            parentId: parentId,
+            author: e.target.author.value,
+            body: e.target.body.value
+        };
+        this.props.newComment(submitComment , parentId)
+
+    };
+
+    render() {
+
+        return (
+            <div>
+                <h6>Add new comment</h6>
+                <div className="form">
+                    <Link to='/'>
+                        <button className="ui icon basic button">
+                            <i aria-hidden="true" className="window close icon"/>
+                        </button>
+                    </Link>
+                    <form onSubmit={this.addNewComment} className="ui form">
+                        <div className="equal width fields">
+                            <div className="field">
+                                <label>Author</label>
+                                <div className="ui input">
+                                    <input type="text" name="author" className="form-control" placeholder="Author"/>
+                                </div>
+                                <label>Comment</label>
+                                <div className="ui input">
+                                    <textarea type="text" name="body" className="form-control" placeholder="Comment"/>
+                                </div>
+                                <div className="submit">
+                                    <button type="submit" className="ui icon left labeled button">
+                                        <i aria-hidden="true" className="checkmark icon"/>Submit
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        )
+    }
+}
+
+
+function mapStateToProps() {
+
+    return {
+    }
+}
+
+
+function mapDispatchToProps(dispatch) {
+    return {
+        newComment: (submitComment , parentId) => dispatch(newComment(submitComment, parentId))
+
+    }
+}
+
+export default withRouter(connect(mapStateToProps
+    , mapDispatchToProps)(Newcomment))

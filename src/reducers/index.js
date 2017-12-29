@@ -5,7 +5,8 @@ import {
     GET_COMMENT_BY_POST,
     ADD_POST,
     GET_POST_BY_CATEGORY,
-    DELETE_POST
+    DELETE_POST,
+    ADD_COMMENT
 } from "../actions/index";
 
 //Categories
@@ -39,10 +40,12 @@ function posts(state = [], action) {
 
 //Comments
 function comments(state = {}, action) {
-    const {comments, parentId} = action;
+    const {comments, parentId , comment} = action;
     switch (action.type) {
         case GET_COMMENT_BY_POST:
             return {...state, [parentId]: comments};
+        case ADD_COMMENT :
+            return state.concat([comment]);
         default:
             return state
     }

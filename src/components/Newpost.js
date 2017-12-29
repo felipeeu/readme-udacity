@@ -65,7 +65,7 @@ class Newpost extends Component {
                                     <textarea type="text" name="body" className="form-control" placeholder="Post"/>
                                 </div>
                                 <div className="submit">
-                                    <button type="submit" className="ui icon left labeled button" classID="deleteButton">
+                                    <button type="submit" className="ui icon left labeled button">
                                         <i aria-hidden="true" className="checkmark icon"/>Submit
                                     </button>
                                 </div>
@@ -91,7 +91,6 @@ function mapDispatchToProps(dispatch) {
     return {
 
         newPost: (submitPost) => dispatch(newPost(submitPost)),
-
         getCategories: () => dispatch(getCategories())
     }
 }

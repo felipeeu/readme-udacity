@@ -1,14 +1,15 @@
 import * as API from '../leituraAPI';
 
 // Categories actions
-export const GET_CATEGORY = 'GET_CATEGORY'
+export const GET_CATEGORY = 'GET_CATEGORY';
 // Posts actions
-export const GET_POST = 'GET_POST'
-export const ADD_POST = 'ADD_POST'
-export const GET_POST_BY_CATEGORY = 'GET_POST_BY_CATEGORY'
-export const DELETE_POST = 'DELETE_POST'
+export const GET_POST = 'GET_POST';
+export const ADD_POST = 'ADD_POST';
+export const GET_POST_BY_CATEGORY = 'GET_POST_BY_CATEGORY';
+export const DELETE_POST = 'DELETE_POST';
 //Comments actions
-export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST'
+export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
+export const ADD_COMMENT = 'ADD_COMMENT';
 
 //Categories actions
 export const getCategories = () => {
@@ -82,6 +83,20 @@ export const getCommentsByPosts = parentId => {
             })
         })
     }
+};
+
+
+export const newComment = (comment, parentId) => {
+    return dispatch => {
+        API.addComment(comment)
+            .then(comment => {
+                dispatch({
+                    type: ADD_COMMENT,
+                    parentId,
+                    comment
+                });
+            })
+    };
 };
 
 

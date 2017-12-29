@@ -9,6 +9,7 @@ import Posts from '../src/components/Posts'
 import Newpost from './components/Newpost'
 
 
+
 class App extends Component {
 
 
@@ -17,7 +18,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <Link to="/"><h1 className="App-title">Leitura-Udacity</h1></Link>
+                    <h1 className="App-title">Leitura-Udacity</h1>
                 </header>
                 <Link to='/newpost'>
                     <button className="ui animated button">

@@ -33,19 +33,18 @@ export const addPost = (post) => {
 };
 
 export const fetchPostByCategory = (category) => {
-        return fetch(`${API}/${category}/posts`, {headers})
-            .then (res => res.json())
+    return fetch(`${API}/${category}/posts`, {headers})
+        .then(res => res.json())
 
 };
 
 export const deletePost = (id) => {
-    return fetch (`${API}/posts/${id}`,
-    {
-     method:'DELETE',
-        headers:headers,
-    }).then(res => res.json())
-}
-
+    return fetch(`${API}/posts/${id}`,
+        {
+            method: 'DELETE',
+            headers: headers,
+        }).then(res => res.json())
+};
 
 
 //Comments
@@ -53,3 +52,16 @@ export const fetchCommentsByParentId = (parentId) => {
     return fetch(`${API}/posts/${parentId}/comments`, {headers})
         .then(res => res.json())
 };
+
+export const addComment = (comment) => {
+    return fetch(`${API}/comments`,
+        {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(comment)
+        })
+        .then(res => res.json())
+};
+
+
+
