@@ -6,7 +6,9 @@ import {
     ADD_POST,
     GET_POST_BY_CATEGORY,
     DELETE_POST,
-    ADD_COMMENT
+    ADD_COMMENT,
+    DELETE_COMMENT
+
 } from "../actions/index";
 
 //Categories
@@ -22,7 +24,7 @@ function categories(state = [], action) {
 
 //Posts
 function posts(state = [], action) {
-    const {post, posts, id} = action;
+    const {post, posts, postId} = action;
     switch (action.type) {
         case GET_POST:
             return action.posts;
@@ -31,7 +33,7 @@ function posts(state = [], action) {
         case GET_POST_BY_CATEGORY:
             return posts.filter(post => !post.deleted);
         case DELETE_POST:
-            return state.filter(post => post.id !== id);
+            return state.filter(post => post.id !== postId);
         default:
             return state
 
@@ -40,16 +42,18 @@ function posts(state = [], action) {
 
 //Comments
 function comments(state = {}, action) {
-    const {comments, parentId , comment} = action;
+    const {comments, parentId, comment} = action;
     switch (action.type) {
         case GET_COMMENT_BY_POST:
             return {...state, [parentId]: comments};
         case ADD_COMMENT :
             return state.concat([comment]);
+        case DELETE_COMMENT:
+            return state
         default:
             return state
     }
-
 }
+
 
 export default combineReducers({categories, posts, comments})

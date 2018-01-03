@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {newComment} from '../actions';
 import {guid} from "../utils";
@@ -8,14 +8,16 @@ import {guid} from "../utils";
 class Newcomment extends Component {
 
     addNewComment = e => {
-        const parentId = this.props.parentId
+        const parentId = this.props.parentId;
         const submitComment = {
             id: guid(),
             parentId: parentId,
             author: e.target.author.value,
             body: e.target.body.value
         };
-        this.props.newComment(submitComment , parentId)
+
+
+        this.props.newComment(submitComment, parentId)
 
     };
 
@@ -25,11 +27,6 @@ class Newcomment extends Component {
             <div>
                 <h6>Add new comment</h6>
                 <div className="form">
-                    <Link to='/'>
-                        <button className="ui icon basic button">
-                            <i aria-hidden="true" className="window close icon"/>
-                        </button>
-                    </Link>
                     <form onSubmit={this.addNewComment} className="ui form">
                         <div className="equal width fields">
                             <div className="field">
@@ -56,19 +53,22 @@ class Newcomment extends Component {
 }
 
 
-function mapStateToProps() {
+function mapStateToProps({posts}) {
 
     return {
+        allposts: posts,
     }
 }
 
 
 function mapDispatchToProps(dispatch) {
     return {
-        newComment: (submitComment , parentId) => dispatch(newComment(submitComment, parentId))
+        newComment: (submitComment, parentId) => dispatch(newComment(submitComment, parentId))
 
     }
 }
 
 export default withRouter(connect(mapStateToProps
     , mapDispatchToProps)(Newcomment))
+
+

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {getCommentsByPosts} from '../actions';
+import {getCommentsByPosts, deleteComment} from '../actions';
 
 
 class Comments extends Component {
@@ -10,9 +10,15 @@ class Comments extends Component {
         this.props.getCommentsByPosts(this.props.parentId)
     }
 
+    onClickDeleteComment = (commentId) => {
+
+        this.props.deleteComment(commentId)
+        this.props.getCommentsByPosts(this.props.parentId)
+    };
+
     render() {
         const {allcomments} = this.props;
-
+        console.log(this.props)
         return (
             <div>
 
@@ -23,26 +29,25 @@ class Comments extends Component {
 
                         <h5>{comment.body}</h5>
                         <h6>{comment.author}</h6>
-                        <button>vote</button>
+                        <button onClick={() => this.onClickDeleteComment(comment.id)}>Delete</button>
                     </div>
-
                 ))}
             </div>
-
         )
     }
 }
 
-function mapStateToProps({comments}, {parentId}) {
+function mapStateToProps({comments}, {parentId} ) {
 
     return {
-        allcomments: comments[parentId]
+        allcomments: comments[parentId],
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId))
+        getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId))
     }
 }
 

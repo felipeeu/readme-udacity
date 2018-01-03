@@ -30,6 +30,7 @@ class Categories extends Component {
                     <div key={category.name} className="categories-bar">
                         <button onClick={() => this.onClickCategories(category.name)}
                                 className="ui black button">{category.name}</button>
+
                     </div>
                 ))}
             </div>
@@ -40,7 +41,7 @@ class Categories extends Component {
 function mapStateToProps({categories}) {
 
     return {
-        allcategories: categories,
+        allcategories: categories
     }
 }
 

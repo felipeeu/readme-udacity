@@ -10,6 +10,8 @@ export const DELETE_POST = 'DELETE_POST';
 //Comments actions
 export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+
 
 //Categories actions
 export const getCategories = () => {
@@ -60,12 +62,12 @@ export const getPostByCategory = (category) => {
 };
 
 
-export const deletePost = (id) => {
+export const deletePost = (postId) => {
     return dispatch => {
-        API.deletePost(id).then(posts =>
+        API.deletePost(postId).then(posts =>
             dispatch({
                 type: DELETE_POST,
-                id
+                postId
             })
         )
     }
@@ -98,5 +100,22 @@ export const newComment = (comment, parentId) => {
             })
     };
 };
+
+export const deleteComment= (commentId) => {
+    return dispatch => {
+        API.deleteComment(commentId).then (comments =>
+        dispatch({
+            type:DELETE_COMMENT,
+            commentId
+
+        })
+        )
+    }
+
+}
+
+
+
+
 
 

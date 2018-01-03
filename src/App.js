@@ -10,6 +10,7 @@ import Newpost from './components/Newpost'
 
 
 
+
 class App extends Component {
 
 
@@ -20,7 +21,7 @@ class App extends Component {
                 <header className="App-header">
                     <h1 className="App-title">Leitura-Udacity</h1>
                 </header>
-                <Link to='/newpost'>
+                <Link to="/newpost">
                     <button className="ui animated button">
                         <div className="visible content">New Post</div>
                         <div className="hidden content">
@@ -41,7 +42,6 @@ class App extends Component {
                         </Switch>
                     </div>
                 </div>
-
             </div>
 
         );

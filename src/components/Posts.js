@@ -6,8 +6,8 @@ import {getPosts, deletePost} from '../actions';
 import {Card, Icon} from 'semantic-ui-react';
 
 //components
-import Comments from "./Comments";
-import Newcomment from "./Newcomment"
+import Comments from './Comments';
+import Newcomment from './Newcomment'
 
 
 class Posts extends Component {
@@ -18,12 +18,12 @@ class Posts extends Component {
 
     componentDidMount() {
         this.props.getPosts()
-
-    }
+    };
 
     onClickDeletePost = (id) => {
         this.props.deletePost(id)
-    }
+    };
+
 
     render() {
         const {allposts} = this.props;
@@ -49,9 +49,9 @@ class Posts extends Component {
                                 <Card.Description>
                                     {post.body}
 
-                                    <Comments parentId={post.id}/>
-
                                     <Newcomment parentId={post.id}/>
+
+                                    <Comments parentId={post.id}/>
 
                                 </Card.Description>
                             </Card.Content>
@@ -78,14 +78,14 @@ class Posts extends Component {
 function mapStateToProps({posts}) {
 
     return {
-        allposts: posts
+        allposts: posts,
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
-        deletePost: (id) => dispatch(deletePost(id))
+        deletePost: (id) => dispatch(deletePost(id)),
     }
 }
 
