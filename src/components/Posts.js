@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import {getPosts, deletePost} from '../actions';
-import {Card, Icon} from 'semantic-ui-react';
+import {getPosts, deletePost, votePost} from '../actions';
+import {Card, Icon, Button} from 'semantic-ui-react';
 
 //components
 import Comments from './Comments';
@@ -24,6 +24,10 @@ class Posts extends Component {
         this.props.deletePost(id)
     };
 
+     onClickVote = (postId, option) => {
+         this.props.votePost(postId, option)
+         this.props.getPosts()
+     };
 
     render() {
         const {allposts} = this.props;
@@ -49,9 +53,10 @@ class Posts extends Component {
                                 <Card.Description>
                                     {post.body}
 
-                                    <Newcomment parentId={post.id}/>
 
+                                    <Newcomment parentId={post.id}/>
                                     <Comments parentId={post.id}/>
+
 
                                 </Card.Description>
                             </Card.Content>
@@ -61,6 +66,22 @@ class Posts extends Component {
                                     {post.category}
                                 </a>
                                 <p>{Date(post.timestamp)}</p>
+
+                                <Button
+                                    onClick={() => {this.onClickVote(post.id, 'upVote');}}
+                                    content='Like'
+                                    icon='heart'
+                                    label={{as: 'a', basic: true, content: post.voteScore}}
+                                    labelPosition='right'
+                                />
+                                <Button
+                                    onClick={() => {this.onClickVote(post.id, 'downVote');}}
+                                    content='Dislike'
+                                    icon='dislike outline'
+                                    //label={{as: 'a', basic: true, pointing: 'right', content: post.voteScore}}
+                                    labelPosition='left'
+                                />
+                               
 
                                 <button onClick={() => this.onClickDeletePost(post.id)} className="ui icon basic button"
                                         id="deleteButton">
@@ -86,6 +107,7 @@ function mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
         deletePost: (id) => dispatch(deletePost(id)),
+        votePost: (id, option) => dispatch(votePost(id, option))
     }
 }
 

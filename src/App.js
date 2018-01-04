@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Route, Link , Switch} from 'react-router-dom';
-
+import { Dropdown } from 'semantic-ui-react'
 
 //components
 import Categories from '../src/components/Categories'
@@ -15,7 +15,7 @@ class App extends Component {
 
 
     render() {
-
+        const stateOptions = [ { key: 'byvote', value: 'vt', text: 'voteScore' }, { key: 'bydate', value: 'date', text: 'time' } ]
         return (
             <div className="App">
                 <header className="App-header">
@@ -29,6 +29,7 @@ class App extends Component {
                         </div>
                     </button>
                 </Link>
+                <Dropdown placeholder='Sort' search selection options={stateOptions} />
                 <div className="allcategories">
                     <div>
                         <Categories />

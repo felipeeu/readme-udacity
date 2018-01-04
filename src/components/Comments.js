@@ -18,7 +18,7 @@ class Comments extends Component {
 
     render() {
         const {allcomments} = this.props;
-        console.log(this.props)
+
         return (
             <div>
 
@@ -26,7 +26,6 @@ class Comments extends Component {
                 {allcomments &&
                 allcomments.map(comment => (
                     <div key={comment.id} className="comment">
-
                         <h5>{comment.body}</h5>
                         <h6>{comment.author}</h6>
                         <button onClick={() => this.onClickDeleteComment(comment.id)}>Delete</button>

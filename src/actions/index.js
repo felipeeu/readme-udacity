@@ -11,6 +11,7 @@ export const DELETE_POST = 'DELETE_POST';
 export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const VOTE_POST = 'VOTE_POST';
 
 
 //Categories actions
@@ -73,6 +74,17 @@ export const deletePost = (postId) => {
     }
 };
 
+export const votePost = (id, option) => {
+    return dispatch => {
+        API.votePost(id, option).then(post => {
+            dispatch({
+                type: VOTE_POST,
+                id,
+                option
+            })
+        })
+    }
+};
 
 //Comments actions
 export const getCommentsByPosts = parentId => {

@@ -7,7 +7,7 @@ import {
     GET_POST_BY_CATEGORY,
     DELETE_POST,
     ADD_COMMENT,
-    DELETE_COMMENT
+    DELETE_COMMENT, VOTE_POST
 
 } from "../actions/index";
 
@@ -25,6 +25,7 @@ function categories(state = [], action) {
 //Posts
 function posts(state = [], action) {
     const {post, posts, postId} = action;
+//console.log(action)
     switch (action.type) {
         case GET_POST:
             return action.posts;
@@ -34,9 +35,20 @@ function posts(state = [], action) {
             return posts.filter(post => !post.deleted);
         case DELETE_POST:
             return state.filter(post => post.id !== postId);
+        case VOTE_POST:
+            return state.map(post => {
+                switch (action.option) {
+                    case "upVote":
+                        return post.voteScore = post.voteScore + 1
+                    case "downVote":
+                        return post.voteScore = post.voteScore - 1
+                    default:
+                        return post
+                }
+
+            });
         default:
             return state
-
     }
 }
 

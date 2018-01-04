@@ -42,10 +42,18 @@ export const deletePost = (id) => {
     return fetch(`${API}/posts/${id}`,
         {
             method: 'DELETE',
-            headers: headers,
+            headers: headers
         }).then(res => res.json())
 };
 
+export const votePost = (id, option) => {
+
+    return fetch(`${API}/posts/${id}`, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify({ option })
+    }).then(res => res.json())
+};
 
 //Comments
 export const fetchCommentsByParentId = (parentId) => {

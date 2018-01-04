@@ -25,29 +25,40 @@ class Newcomment extends Component {
 
         return (
             <div>
-                <h6>Add new comment</h6>
-                <div className="form">
-                    <form onSubmit={this.addNewComment} className="ui form">
-                        <div className="equal width fields">
-                            <div className="field">
-                                <label>Author</label>
-                                <div className="ui input">
-                                    <input type="text" name="author" className="form-control" placeholder="Author"/>
+
+                <div className="accordion ui styled">
+                    <div className="active title">
+                        <i aria-hidden="true" className="dropdown icon"/>New comment
+                    </div>
+                    <div className="content active">
+                        <div className="form">
+                            <form onSubmit={this.addNewComment} className="ui form">
+                                <div className="equal width fields">
+                                    <div className="field">
+                                        <label>Author</label>
+                                        <div className="ui input">
+                                            <input type="text" name="author" className="form-control"
+                                                   placeholder="Author"/>
+                                        </div>
+                                        <label>Comment</label>
+                                        <div className="ui input">
+                                            <textarea type="text" name="body" className="form-control"
+                                                      placeholder="Comment"/>
+                                        </div>
+                                        <div className="submit">
+                                            <button type="submit" className="ui icon left labeled button">
+                                                <i aria-hidden="true" className="checkmark icon"/>Add New Comment
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <label>Comment</label>
-                                <div className="ui input">
-                                    <textarea type="text" name="body" className="form-control" placeholder="Comment"/>
-                                </div>
-                                <div className="submit">
-                                    <button type="submit" className="ui icon left labeled button">
-                                        <i aria-hidden="true" className="checkmark icon"/>Submit
-                                    </button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+
+
         )
     }
 }
