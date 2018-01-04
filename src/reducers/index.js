@@ -7,7 +7,9 @@ import {
     GET_POST_BY_CATEGORY,
     DELETE_POST,
     ADD_COMMENT,
-    DELETE_COMMENT, VOTE_POST
+    DELETE_COMMENT,
+    VOTE_POST,
+    VOTE_COMMENT
 
 } from "../actions/index";
 
@@ -23,9 +25,9 @@ function categories(state = [], action) {
 }
 
 //Posts
-function posts(state = [], action) {
+function posts(state = [], action){
     const {post, posts, postId} = action;
-//console.log(action)
+
     switch (action.type) {
         case GET_POST:
             return action.posts;
@@ -36,16 +38,17 @@ function posts(state = [], action) {
         case DELETE_POST:
             return state.filter(post => post.id !== postId);
         case VOTE_POST:
-            return state.map(post => {
-                switch (action.option) {
-                    case "upVote":
-                        return post.voteScore = post.voteScore + 1
-                    case "downVote":
-                        return post.voteScore = post.voteScore - 1
-                    default:
-                        return post
-                }
+            return state.map (post => {
 
+                if (post.id === action.postId) {
+                    if (action.option === 'upVote') {
+                        post.voteScore += 1;
+                    }
+                    if (action.option === 'downVote') {
+                        post.voteScore -= 1;
+                    }
+                }
+                return post;
             });
         default:
             return state
@@ -54,7 +57,7 @@ function posts(state = [], action) {
 
 //Comments
 function comments(state = {}, action) {
-    const {comments, parentId, comment} = action;
+    const {comments, parentId, comment , id , currentComment  } = action;
     switch (action.type) {
         case GET_COMMENT_BY_POST:
             return {...state, [parentId]: comments};
@@ -62,6 +65,16 @@ function comments(state = {}, action) {
             return state.concat([comment]);
         case DELETE_COMMENT:
             return state
+
+        case VOTE_COMMENT:
+            return{
+        ...state,
+            [parentId]: state[parentId]
+            .filter(vote => vote.id !== id)
+            .concat([currentComment])
+    };
+
+
         default:
             return state
     }

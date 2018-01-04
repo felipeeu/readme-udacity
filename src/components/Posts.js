@@ -24,10 +24,10 @@ class Posts extends Component {
         this.props.deletePost(id)
     };
 
-     onClickVote = (postId, option) => {
-         this.props.votePost(postId, option)
-         this.props.getPosts()
-     };
+    onClickVote = (postId, option) => {
+        this.props.votePost(postId, option)
+        this.props.getPosts()
+    };
 
     render() {
         const {allposts} = this.props;
@@ -39,7 +39,6 @@ class Posts extends Component {
                 {allposts &&
                 allposts.map(post => (
                     <div key={post.id} className="post-body">
-
                         <Card>
                             <Card.Content>
                                 <Card.Header>
@@ -67,21 +66,25 @@ class Posts extends Component {
                                 </a>
                                 <p>{Date(post.timestamp)}</p>
 
-                                <Button
-                                    onClick={() => {this.onClickVote(post.id, 'upVote');}}
-                                    content='Like'
-                                    icon='heart'
-                                    label={{as: 'a', basic: true, content: post.voteScore}}
-                                    labelPosition='right'
-                                />
-                                <Button
-                                    onClick={() => {this.onClickVote(post.id, 'downVote');}}
-                                    content='Dislike'
-                                    icon='dislike outline'
-                                    //label={{as: 'a', basic: true, pointing: 'right', content: post.voteScore}}
-                                    labelPosition='left'
-                                />
-                               
+
+                                    <Button
+                                        onClick={() => {
+                                            this.onClickVote(post.id, 'upVote');
+                                        }}
+                                        content='Like'
+                                        icon='heart'
+                                        label={{as: 'a', basic: true, content: post.voteScore}}
+                                        labelPosition='right'
+                                    />
+                                    <Button
+                                        onClick={() => {
+                                            this.onClickVote(post.id, 'downVote');
+                                        }}
+                                        content='Dislike'
+                                        icon='dislike outline'
+                                        labelPosition='left'
+                                    />
+
 
                                 <button onClick={() => this.onClickDeletePost(post.id)} className="ui icon basic button"
                                         id="deleteButton">

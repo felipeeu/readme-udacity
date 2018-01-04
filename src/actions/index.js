@@ -12,7 +12,7 @@ export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const VOTE_POST = 'VOTE_POST';
-
+export const VOTE_COMMENT = 'VOTE_COMMENT'
 
 //Categories actions
 export const getCategories = () => {
@@ -124,7 +124,21 @@ export const deleteComment= (commentId) => {
         )
     }
 
-}
+};
+
+
+export const voteComment = (id, parentId, option) => {
+    return dispatch => {
+        API.voteComment(id, option).then(currentComment => {
+            dispatch({
+                type: VOTE_COMMENT,
+                currentComment,
+                id,
+                parentId
+            });
+        });
+    };
+};
 
 
 
