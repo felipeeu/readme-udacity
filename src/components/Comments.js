@@ -33,14 +33,14 @@ class Comments extends Component {
 
         return (
             <div>
-
-                <h6>Comments</h6>
                 {allcomments &&
                 allcomments.map(comment => (
                     <div key={comment.id} className="comment">
                         <h5>{comment.body}</h5>
                         <h6>{comment.author}</h6>
                         <button onClick={() => this.onClickDeleteComment(comment.id)}>Delete</button>
+                        <br/>
+                        <br/>
                         <div>
                             <Button
                                 onClick={() => {
@@ -50,6 +50,8 @@ class Comments extends Component {
                                 icon='heart'
                                 label={{as: 'a', basic: true, content: comment.voteScore}}
                                 labelPosition='right'
+                                size='mini'
+
                             />
                             <Button
                                 onClick={() => {
@@ -58,8 +60,11 @@ class Comments extends Component {
                                 content='Dislike'
                                 icon='dislike outline'
                                 labelPosition='left'
+                                size='mini'
                             />
                         </div>
+                        <br/>
+                        <br/>
                     </div>
                 ))}
             </div>

@@ -36,8 +36,6 @@ class Posts extends Component {
 
         return (
             <div>
-                <h6>Posts</h6>
-
                 {allposts &&
                 allposts.map(post => (
                     <div key={post.id} className="post-body">
@@ -54,10 +52,10 @@ class Posts extends Component {
                                 <Card.Description>
                                     {post.body}
 
-
                                     <Newcomment parentId={post.id}/>
+                                    <br/>
+                                    <br/>
                                     <Comments parentId={post.id}/>
-
 
                                 </Card.Description>
                             </Card.Content>
@@ -77,6 +75,7 @@ class Posts extends Component {
                                     icon='heart'
                                     label={{as: 'a', basic: true, content: post.voteScore}}
                                     labelPosition='right'
+                                    positive= {true}
                                 />
                                 <Button
                                     onClick={() => {
@@ -85,6 +84,7 @@ class Posts extends Component {
                                     content='Dislike'
                                     icon='dislike outline'
                                     labelPosition='left'
+                                    negative={true}
                                 />
 
 

@@ -26,7 +26,6 @@ class Categories extends Component {
 
         return (
             <div>
-                <h6>Categories</h6>
                 {allcategories &&
                 allcategories.map(category => (
                     <div key={category.name} className="categories-bar">
