@@ -7,12 +7,17 @@ export const GET_POST = 'GET_POST';
 export const ADD_POST = 'ADD_POST';
 export const GET_POST_BY_CATEGORY = 'GET_POST_BY_CATEGORY';
 export const DELETE_POST = 'DELETE_POST';
+export const SORT_POSTS = 'SORT_POSTS'
 //Comments actions
 export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const VOTE_POST = 'VOTE_POST';
-export const VOTE_COMMENT = 'VOTE_COMMENT'
+export const VOTE_COMMENT = 'VOTE_COMMENT';
+
+
+
+
 
 //Categories actions
 export const getCategories = () => {
@@ -86,6 +91,15 @@ export const votePost = (id, option) => {
     }
 };
 
+export const sortPosts = (sortType) => {
+    return dispatch => {
+        dispatch({
+            type: SORT_POSTS,
+            sortType
+        });
+    };
+};
+
 //Comments actions
 export const getCommentsByPosts = parentId => {
     return dispatch => {
@@ -139,7 +153,6 @@ export const voteComment = (id, parentId, option) => {
         });
     };
 };
-
 
 
 

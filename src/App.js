@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route, Link , Switch} from 'react-router-dom';
-import { Dropdown } from 'semantic-ui-react'
+import {connect} from 'react-redux';
+import {withRouter, Route, Link, Switch} from 'react-router-dom';
+
+
+//actions
+import {sortPosts} from './actions'
 
 //components
 import Categories from '../src/components/Categories'
@@ -9,14 +13,18 @@ import Posts from '../src/components/Posts'
 import Newpost from './components/Newpost'
 
 
-
-
 class App extends Component {
 
+    onChangeSort = (sortType) => {
+        this.props.sortPosts(sortType)
+
+    };
 
     render() {
-        const stateOptions = [ { key: 'byvote', value: 'vt', text: 'voteScore' }, { key: 'bydate', value: 'date', text: 'time' } ]
+
+
         return (
+
             <div className="App">
                 <header className="App-header">
                     <h1 className="App-title">Leitura-Udacity</h1>
@@ -29,10 +37,16 @@ class App extends Component {
                         </div>
                     </button>
                 </Link>
-                <Dropdown placeholder='Sort' search selection options={stateOptions} />
+
+                <p>Sort : </p>
+                <select onChange={(e) => this.onChangeSort(e.target.value)}>
+                    <option value='voteScore'>byVote</option>
+                    <option value='timestamp'>byTime</option>
+                </select>
+
                 <div className="allcategories">
                     <div>
-                        <Categories />
+                        <Categories/>
                     </div>
                 </div>
                 <div className="allposts">
@@ -49,6 +63,15 @@ class App extends Component {
     }
 }
 
+function mapStateToProps() {
 
-export default App;
+    return {}
+}
+
+
+export default withRouter(
+    connect(mapStateToProps,
+        {sortPosts}
+    )(App)
+);
 

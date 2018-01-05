@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {newComment} from '../actions';
 import {guid} from "../utils";
+
+//actions
+import {newComment} from '../actions';
+
 
 
 class Newcomment extends Component {

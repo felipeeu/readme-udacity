@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux'
+import sortBy from 'sort-by';
 import {
     GET_CATEGORY,
     GET_POST,
@@ -9,7 +10,8 @@ import {
     ADD_COMMENT,
     DELETE_COMMENT,
     VOTE_POST,
-    VOTE_COMMENT
+    VOTE_COMMENT,
+    SORT_POSTS
 
 } from "../actions/index";
 
@@ -26,7 +28,7 @@ function categories(state = [], action) {
 
 //Posts
 function posts(state = [], action){
-    const {post, posts, postId} = action;
+    const {post, posts, postId, sortType} = action;
 
     switch (action.type) {
         case GET_POST:
@@ -50,6 +52,9 @@ function posts(state = [], action){
                 }
                 return post;
             });
+        case SORT_POSTS:
+            return [].concat(state.sort(sortBy('-' + sortType)))
+               ;
         default:
             return state
     }
@@ -73,12 +78,14 @@ function comments(state = {}, action) {
             .filter(vote => vote.id !== id)
             .concat([currentComment])
     };
-
-
         default:
             return state
     }
 }
+
+
+
+
 
 
 export default combineReducers({categories, posts, comments})

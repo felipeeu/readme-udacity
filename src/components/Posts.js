@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import {getPosts, deletePost, votePost} from '../actions';
 import {Card, Icon, Button} from 'semantic-ui-react';
+
+//actions
+import {
+    getPosts,
+    deletePost,
+    votePost
+} from '../actions';
 
 //components
 import Comments from './Comments';
@@ -12,9 +17,6 @@ import Newcomment from './Newcomment'
 
 class Posts extends Component {
 
-    static propTypes = {
-        posts: PropTypes.array
-    };
 
     componentDidMount() {
         this.props.getPosts()
@@ -67,23 +69,23 @@ class Posts extends Component {
                                 <p>{Date(post.timestamp)}</p>
 
 
-                                    <Button
-                                        onClick={() => {
-                                            this.onClickVote(post.id, 'upVote');
-                                        }}
-                                        content='Like'
-                                        icon='heart'
-                                        label={{as: 'a', basic: true, content: post.voteScore}}
-                                        labelPosition='right'
-                                    />
-                                    <Button
-                                        onClick={() => {
-                                            this.onClickVote(post.id, 'downVote');
-                                        }}
-                                        content='Dislike'
-                                        icon='dislike outline'
-                                        labelPosition='left'
-                                    />
+                                <Button
+                                    onClick={() => {
+                                        this.onClickVote(post.id, 'upVote');
+                                    }}
+                                    content='Like'
+                                    icon='heart'
+                                    label={{as: 'a', basic: true, content: post.voteScore}}
+                                    labelPosition='right'
+                                />
+                                <Button
+                                    onClick={() => {
+                                        this.onClickVote(post.id, 'downVote');
+                                    }}
+                                    content='Dislike'
+                                    icon='dislike outline'
+                                    labelPosition='left'
+                                />
 
 
                                 <button onClick={() => this.onClickDeletePost(post.id)} className="ui icon basic button"

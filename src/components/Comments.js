@@ -1,8 +1,14 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {getCommentsByPosts, deleteComment, voteComment} from '../actions';
 import {Button} from 'semantic-ui-react';
+
+//actions
+import {
+    getCommentsByPosts,
+    deleteComment,
+    voteComment
+} from '../actions';
 
 
 class Comments extends Component {
@@ -35,25 +41,25 @@ class Comments extends Component {
                         <h5>{comment.body}</h5>
                         <h6>{comment.author}</h6>
                         <button onClick={() => this.onClickDeleteComment(comment.id)}>Delete</button>
-
-                        <Button
-                            onClick={() => {
-                                this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
-                            }}
-                            content='Like'
-                            icon='heart'
-                            label={{as: 'a', basic: true, content: comment.voteScore}}
-                            labelPosition='right'
-                        />
-                        <Button
-                            onClick={() => {
-                                this.onClickVoteComment(comment.id, comment.parentId, 'downVote');
-                            }}
-                            content='Dislike'
-                            icon='dislike outline'
-                            labelPosition='left'
-                        />
-
+                        <div>
+                            <Button
+                                onClick={() => {
+                                    this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
+                                }}
+                                content='Like'
+                                icon='heart'
+                                label={{as: 'a', basic: true, content: comment.voteScore}}
+                                labelPosition='right'
+                            />
+                            <Button
+                                onClick={() => {
+                                    this.onClickVoteComment(comment.id, comment.parentId, 'downVote');
+                                }}
+                                content='Dislike'
+                                icon='dislike outline'
+                                labelPosition='left'
+                            />
+                        </div>
                     </div>
                 ))}
             </div>

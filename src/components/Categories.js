@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import {getCategories, getPostByCategory} from '../actions'
+
+
+//actions
+import {
+    getCategories,
+    getPostByCategory
+} from '../actions'
 
 
 class Categories extends Component {
 
-    static propTypes = {
-        categories: PropTypes.array
-    };
 
     onClickCategories = (category) => {
         this.props.getPostByCategory(category)

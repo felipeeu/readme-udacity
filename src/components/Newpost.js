@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {newPost, getCategories} from '../actions';
 import {guid} from "../utils";
+
+//actions
+import {
+    newPost,
+    getCategories
+} from '../actions';
 
 
 class Newpost extends Component {
@@ -15,7 +20,7 @@ class Newpost extends Component {
 
         const submitPost = {
             id: guid(),
-            timestamp:Date.now(),
+            timestamp: Date.now(),
             author: e.target.author.value,
             title: e.target.title.value,
             body: e.target.body.value,
@@ -50,7 +55,7 @@ class Newpost extends Component {
                                     <input type="text" name="title" className="form-control" placeholder="Title"/>
                                 </div>
 
-                                <div className="field" >
+                                <div className="field">
                                     <label>Category</label>
                                     <select name="category" className="btn btn-default dropdown-toggle">
                                         {allcategories &&
