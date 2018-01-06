@@ -17,7 +17,6 @@ class App extends Component {
 
     onChangeSort = (sortType) => {
         this.props.sortPosts(sortType)
-
     };
 
     render() {

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Button} from 'semantic-ui-react';
+import sortBy from 'sort-by';
 
 //actions
 import {
@@ -33,40 +34,51 @@ class Comments extends Component {
 
         return (
             <div>
-                {allcomments &&
-                allcomments.map(comment => (
-                    <div key={comment.id} className="comment">
-                        <h5>{comment.body}</h5>
-                        <h6>{comment.author}</h6>
-                        <button onClick={() => this.onClickDeleteComment(comment.id)}>Delete</button>
-                        <br/>
-                        <br/>
-                        <div>
-                            <Button
-                                onClick={() => {
-                                    this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
-                                }}
-                                content='Like'
-                                icon='heart'
-                                label={{as: 'a', basic: true, content: comment.voteScore}}
-                                labelPosition='right'
-                                size='mini'
+                {allcomments && allcomments
+                    .sort(sortBy('voteScore'))
+                    .reverse()
+                    .map(comment => (
+                        <div key={comment.id} className="comment">
+                            <h4>{comment.body}</h4>
+                            <h5>{comment.author}</h5>
+                            <br/>
+                            <div>
+                                <Button
+                                    onClick={() => {
+                                        this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
+                                    }}
+                                    content='Like'
+                                    icon='heart'
+                                    label={{as: 'a', basic: true, content: comment.voteScore}}
+                                    labelPosition='right'
+                                    size='mini'
 
-                            />
+                                />
+                                <Button
+                                    onClick={() => {
+                                        this.onClickVoteComment(comment.id, comment.parentId, 'downVote');
+                                    }}
+                                    content='Dislike'
+                                    icon='dislike outline'
+                                    labelPosition='left'
+                                    size='mini'
+                                />
+                            </div>
+                            <br/>
+
                             <Button
-                                onClick={() => {
-                                    this.onClickVoteComment(comment.id, comment.parentId, 'downVote');
-                                }}
-                                content='Dislike'
-                                icon='dislike outline'
+                                onClick={() => this.onClickDeleteComment(comment.id)}
+                                content='Delete comment'
+                                icon='trash'
                                 labelPosition='left'
                                 size='mini'
                             />
+                            <br/>
+                            <br/>
+                            <br/>
+
                         </div>
-                        <br/>
-                        <br/>
-                    </div>
-                ))}
+                    ))}
             </div>
         )
     }
@@ -75,7 +87,7 @@ class Comments extends Component {
 function mapStateToProps({comments}, {parentId}) {
 
     return {
-        allcomments: comments[parentId],
+        allcomments: comments[parentId]
     }
 }
 

@@ -71,7 +71,7 @@ class Newpost extends Component {
                                 </div>
                                 <div className="submit">
                                     <button type="submit" className="ui icon left labeled button">
-                                        <i aria-hidden="true" className="checkmark icon"/>Submit
+                                        <i aria-hidden="true" className="checkmark icon"/>Add New Post
                                     </button>
                                 </div>
                             </div>
