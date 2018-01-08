@@ -8,15 +8,14 @@ import {
     getCategories,
     getPostByCategory,
     getPosts
-} from '../actions'
+} from '../actions';
 
 
 class Categories extends Component {
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.props.getCategories();
     };
-
     onClickCategories = (category) => {
         this.props.getPostByCategory(category)
     };
@@ -28,15 +27,16 @@ class Categories extends Component {
         const {allcategories} = this.props;
 
         return (
-            <div>
+            <div className="categories-bar">
                 {allcategories &&
                 allcategories.map(category => (
-                    <div key={category.name} className="categories-bar">
+                    <div key={category.name} className="categories-button">
                         <button onClick={() => this.onClickCategories(category.name)}
                                 className="ui black button">{category.name}</button>
                     </div>
                 ))}
-                <Button onClick={() => this.onClickAllCategories()}>All</Button>
+                <Button onClick={() => this.onClickAllCategories()}
+                        content='All'/>
             </div>
         )
     }

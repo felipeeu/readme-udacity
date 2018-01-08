@@ -19,19 +19,16 @@ import Newcomment from './Newcomment';
 class Posts extends Component {
 
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.props.getPosts()
     };
-
     onClickDeletePost = (id) => {
         this.props.deletePost(id)
     };
-
     onClickVote = (postId, option) => {
         this.props.votePost(postId, option);
         this.props.getPosts();
     };
-
 
     render() {
         const {allposts} = this.props;
@@ -57,8 +54,6 @@ class Posts extends Component {
                                         <Newcomment parentId={post.id}/>
                                         <Comments parentId={post.id}/>
                                         <p> {pluralSingular(post.commentCount, 'comment')}</p>
-
-
                                     </Card.Description>
                                 </Card.Content>
                                 <Card.Content extra>
@@ -105,16 +100,13 @@ function mapStateToProps({posts}) {
         allposts: posts
     }
 }
-
 function mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
         deletePost: (id) => dispatch(deletePost(id)),
         votePost: (id, option) => dispatch(votePost(id, option))
-
     }
 }
-
 export default withRouter(connect(mapStateToProps
     , mapDispatchToProps)(Posts))
 

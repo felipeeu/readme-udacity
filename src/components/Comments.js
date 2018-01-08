@@ -15,16 +15,14 @@ import {
 
 class Comments extends Component {
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.props.getCommentsByPosts(this.props.parentId)
-    }
-
-    onClickDeleteComment = (commentId) => {
-        this.props.deleteComment(commentId)
-        this.props.getCommentsByPosts(this.props.parentId)
-        this.props.getPosts()
     };
-
+    onClickDeleteComment = (commentId) => {
+        this.props.deleteComment(commentId);
+        this.props.getCommentsByPosts(this.props.parentId);
+        this.props.getPosts();
+    };
     onClickVoteComment = (commentId, parentId, option) => {
         this.props.voteComment(commentId, parentId, option)
 
@@ -42,7 +40,6 @@ class Comments extends Component {
                         <div key={comment.id} className="comment">
                             <h5 className="comment-body">{comment.body}</h5>
                             <h5 className="comment-author">{comment.author}</h5>
-                            <br/>
                             <div>
                                 <Button
                                     onClick={() => {
@@ -74,9 +71,6 @@ class Comments extends Component {
                                 labelPosition='left'
                                 size='mini'
                             />
-                            <br/>
-                            <br/>
-                            <br/>
                             <hr/>
                         </div>
                     ))}

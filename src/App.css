@@ -35,24 +35,25 @@
     padding-top: 20%;
 }
 
-#deleteButton {
+.post-delete-button {
+    padding-top: 5%;
     margin-left: 85%;
-
 }
 
 .sort-button{
     padding: 5%;
 }
+
 .comment-div{
     display:block;
     padding-top: 3%;
     flex-wrap: wrap;
 }
 
-
 .post-container {
     display: inline-grid;
 }
+
 .comment-div{
     display:block;
     padding-top: 3%;

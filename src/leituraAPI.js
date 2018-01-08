@@ -51,9 +51,10 @@ export const votePost = (id, option) => {
     return fetch(`${API}/posts/${id}`, {
         method: 'POST',
         headers: headers,
-        body: JSON.stringify({ option })
+        body: JSON.stringify({option})
     }).then(res => res.json())
 };
+
 
 //Comments
 export const fetchCommentsByParentId = (parentId) => {
@@ -77,14 +78,14 @@ export const deleteComment = (id) => {
             method: 'DELETE',
             headers: headers,
         }).then(res => res.json())
-}
-
+};
 
 export const voteComment = (id, option) => {
 
     return fetch(`${API}/comments/${id}`, {
         method: 'POST',
         headers: headers,
-        body: JSON.stringify({ option })
+        body: JSON.stringify({option})
     }).then(res => res.json())
 };
+

@@ -14,7 +14,6 @@ import {
     SORT_POSTS
 
 } from "../actions/index";
-
 //Categories
 function categories(state = [], action) {
 
@@ -25,7 +24,6 @@ function categories(state = [], action) {
             return state
     }
 }
-
 //Posts
 function posts(state = [], action) {
     const {post, posts, postId, sortType} = action;
@@ -54,12 +52,10 @@ function posts(state = [], action) {
             });
         case SORT_POSTS:
             return [].concat(state.sort(sortBy('-' + sortType)));
-
         default:
             return state
     }
 }
-
 //Comments
 function comments(state = {}, action) {
     const {comments, parentId, comment, id, currentComment} = action;
@@ -78,13 +74,10 @@ function comments(state = {}, action) {
                     .filter(vote => vote.id !== id)
                     .concat([currentComment])
             };
-
         default:
             return state
     }
 }
-
-
 export default combineReducers({
     categories,
     posts,

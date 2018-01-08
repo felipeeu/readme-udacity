@@ -22,7 +22,6 @@ class App extends Component {
 
     render() {
 
-
         return (
 
             <div className="App">
@@ -37,8 +36,6 @@ class App extends Component {
                         </div>
                     </button>
                 </Link>
-
-
                 <div className="sort-button">
                     <p>Sort : </p>
                     <Button
@@ -56,9 +53,7 @@ class App extends Component {
                         labelPosition='right'
                         compact={true}
                     />
-
                 </div>
-
                 <div className="allcategories">
                     <div>
                         <Categories/>
@@ -73,8 +68,7 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-
-        );
+        )
     }
 }
 
@@ -82,10 +76,9 @@ function mapStateToProps() {
 
     return {}
 }
-
-
 export default withRouter(
-    connect(mapStateToProps,
+    connect(
+        mapStateToProps,
         {sortPosts}
     )(App)
 );

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {guid} from "../utils";
+import {Button} from 'semantic-ui-react';
 
 //actions
 import {
@@ -11,7 +12,7 @@ import {
 
 class Newpost extends Component {
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.props.getCategories()
     };
 
@@ -24,20 +25,19 @@ class Newpost extends Component {
             body: e.target.body.value,
             category: e.target.category.value
         };
-        this.props.newPost(submitPost)
+        this.props.newPost(submitPost);
     };
 
     render() {
         const {allcategories} = this.props;
 
         return (
+
             <div>
-                <h6>Add new post</h6>
                 <div className="form">
                     <Link to='/'>
-                        <button className="ui icon basic button">
-                            <i aria-hidden="true" className="window close icon"/>
-                        </button>
+                        <Button icon='close'
+                                circular={true}/>
                     </Link>
                     <form onSubmit={this.addNewPost} className="ui form">
                         <div className="equal width fields">
