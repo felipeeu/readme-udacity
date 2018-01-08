@@ -6,6 +6,7 @@ import sortBy from 'sort-by';
 
 //actions
 import {
+    getPosts,
     getCommentsByPosts,
     deleteComment,
     voteComment
@@ -19,28 +20,28 @@ class Comments extends Component {
     }
 
     onClickDeleteComment = (commentId) => {
-
         this.props.deleteComment(commentId)
         this.props.getCommentsByPosts(this.props.parentId)
+        this.props.getPosts()
     };
 
     onClickVoteComment = (commentId, parentId, option) => {
         this.props.voteComment(commentId, parentId, option)
-        this.props.getCommentsByPosts(this.props.parentId)
+
     };
 
     render() {
         const {allcomments} = this.props;
 
         return (
-            <div>
+            <div className="comment-div">
                 {allcomments && allcomments
-                    .sort(sortBy('voteScore'))
-                    .reverse()
+                    .sort(sortBy('voteScore')) // sort comments
+                    .reverse() // most voted in the top
                     .map(comment => (
                         <div key={comment.id} className="comment">
-                            <h4>{comment.body}</h4>
-                            <h5>{comment.author}</h5>
+                            <h5 className="comment-body">{comment.body}</h5>
+                            <h5 className="comment-author">{comment.author}</h5>
                             <br/>
                             <div>
                                 <Button
@@ -48,7 +49,7 @@ class Comments extends Component {
                                         this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
                                     }}
                                     content='Like'
-                                    icon='heart'
+                                    icon='thumbs outline up'
                                     label={{as: 'a', basic: true, content: comment.voteScore}}
                                     labelPosition='right'
                                     size='mini'
@@ -76,7 +77,7 @@ class Comments extends Component {
                             <br/>
                             <br/>
                             <br/>
-
+                            <hr/>
                         </div>
                     ))}
             </div>
@@ -93,6 +94,7 @@ function mapStateToProps({comments}, {parentId}) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        getPosts: () => dispatch(getPosts()),
         getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
         deleteComment: (commentId) => dispatch(deleteComment(commentId)),
         voteComment: (commentId, parentId, option) => dispatch(voteComment(commentId, parentId, option))

@@ -9,15 +9,13 @@ import {
     getCategories
 } from '../actions';
 
-
 class Newpost extends Component {
 
     componentDidMount() {
-        this.props.getCategories();
+        this.props.getCategories()
     };
 
     addNewPost = e => {
-
         const submitPost = {
             id: guid(),
             timestamp: Date.now(),
@@ -25,8 +23,6 @@ class Newpost extends Component {
             title: e.target.title.value,
             body: e.target.body.value,
             category: e.target.category.value
-
-
         };
         this.props.newPost(submitPost)
     };
@@ -48,11 +44,17 @@ class Newpost extends Component {
                             <div className="field">
                                 <label>Author</label>
                                 <div className="ui input">
-                                    <input type="text" name="author" className="form-control" placeholder="Author"/>
+                                    <input type="text"
+                                           name="author"
+                                           className="form-control"
+                                           placeholder="Author"/>
                                 </div>
                                 <label>Title</label>
                                 <div className="ui input">
-                                    <input type="text" name="title" className="form-control" placeholder="Title"/>
+                                    <input type="text"
+                                           name="title"
+                                           className="form-control"
+                                           placeholder="Title"/>
                                 </div>
 
                                 <div className="field">
@@ -67,7 +69,10 @@ class Newpost extends Component {
 
                                 <label>Post</label>
                                 <div className="ui input">
-                                    <textarea type="text" name="body" className="form-control" placeholder="Post"/>
+                                    <textarea type="text"
+                                              name="body"
+                                              className="form-control"
+                                              placeholder="Post"/>
                                 </div>
                                 <div className="submit">
                                     <button type="submit" className="ui icon left labeled button">
@@ -83,18 +88,14 @@ class Newpost extends Component {
     }
 }
 
-
 function mapStateToProps({categories}) {
-
     return {
         allcategories: categories
     }
 }
 
-
 function mapDispatchToProps(dispatch) {
     return {
-
         newPost: (submitPost) => dispatch(newPost(submitPost)),
         getCategories: () => dispatch(getCategories())
     }

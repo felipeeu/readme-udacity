@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import {withRouter, Route, Link, Switch} from 'react-router-dom';
+import {Button} from 'semantic-ui-react';
 
 
 //actions
@@ -37,11 +38,26 @@ class App extends Component {
                     </button>
                 </Link>
 
-                <p>Sort : </p>
-                <select onChange={(e) => this.onChangeSort(e.target.value)}>
-                    <option value='voteScore'>byVote</option>
-                    <option value='timestamp'>byTime</option>
-                </select>
+
+                <div className="sort-button">
+                    <p>Sort : </p>
+                    <Button
+                        onClick={() => this.onChangeSort('voteScore')}
+                        content='byVote'
+                        icon='heart'
+                        labelPosition='left'
+                        compact={true}
+
+                    />
+                    <Button
+                        onClick={() => this.onChangeSort('timestamp')}
+                        content='byTime'
+                        icon='calendar'
+                        labelPosition='right'
+                        compact={true}
+                    />
+
+                </div>
 
                 <div className="allcategories">
                     <div>

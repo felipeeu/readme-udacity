@@ -14,9 +14,6 @@ export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const VOTE_COMMENT = 'VOTE_COMMENT';
-export const SORT_COMMENTS = 'SORT_COMMENTS'
-
-
 
 
 //Categories actions
@@ -43,7 +40,6 @@ export const getPosts = () => {
     }
 };
 
-
 export const newPost = (post) => {
     return dispatch => {
         API.addPost(post).then(post =>
@@ -55,7 +51,6 @@ export const newPost = (post) => {
     }
 };
 
-
 export const getPostByCategory = (category) => {
     return dispatch => {
         API.fetchPostByCategory(category).then(posts => {
@@ -66,7 +61,6 @@ export const getPostByCategory = (category) => {
         })
     }
 };
-
 
 export const deletePost = (postId) => {
     return dispatch => {
@@ -96,12 +90,14 @@ export const sortPosts = (sortType) => {
         dispatch({
             type: SORT_POSTS,
             sortType
-        });
-    };
+        })
+    }
 };
 
+
+
 //Comments actions
-export const getCommentsByPosts = parentId => {
+export const getCommentsByPosts = (parentId) => {
     return dispatch => {
         API.fetchCommentsByParentId(parentId).then(comments => {
             dispatch({
@@ -112,7 +108,6 @@ export const getCommentsByPosts = parentId => {
         })
     }
 };
-
 
 export const newComment = (comment, parentId) => {
     return dispatch => {
@@ -127,19 +122,16 @@ export const newComment = (comment, parentId) => {
     };
 };
 
-export const deleteComment= (commentId) => {
+export const deleteComment = (commentId) => {
     return dispatch => {
-        API.deleteComment(commentId).then (comments =>
-        dispatch({
-            type:DELETE_COMMENT,
-            commentId
-
-        })
+        API.deleteComment(commentId).then(comments =>
+            dispatch({
+                type: DELETE_COMMENT,
+                commentId
+            })
         )
     }
-
 };
-
 
 export const voteComment = (id, parentId, option) => {
     return dispatch => {
@@ -154,13 +146,5 @@ export const voteComment = (id, parentId, option) => {
     };
 };
 
-export const sortComments = (sortType) => {
-    return dispatch => {
-        dispatch({
-            type: SORT_COMMENTS,
-            sortType
-        });
-    };
-};
 
 

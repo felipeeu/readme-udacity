@@ -11,7 +11,7 @@ import {
     DELETE_COMMENT,
     VOTE_POST,
     VOTE_COMMENT,
-    SORT_POSTS, SORT_COMMENTS
+    SORT_POSTS
 
 } from "../actions/index";
 
@@ -53,8 +53,8 @@ function posts(state = [], action) {
                 return post;
             });
         case SORT_POSTS:
-            return [].concat(state.sort(sortBy('-' + sortType)))
-                ;
+            return [].concat(state.sort(sortBy('-' + sortType)));
+
         default:
             return state
     }
@@ -63,13 +63,14 @@ function posts(state = [], action) {
 //Comments
 function comments(state = {}, action) {
     const {comments, parentId, comment, id, currentComment} = action;
+
     switch (action.type) {
         case GET_COMMENT_BY_POST:
             return {...state, [parentId]: comments};
         case ADD_COMMENT :
             return state.concat([comment]);
         case DELETE_COMMENT:
-            return state
+            return state;
         case VOTE_COMMENT:
             return {
                 ...state,
@@ -77,8 +78,6 @@ function comments(state = {}, action) {
                     .filter(vote => vote.id !== id)
                     .concat([currentComment])
             };
-        case SORT_COMMENTS:
-            return {}
 
         default:
             return state
@@ -86,4 +85,9 @@ function comments(state = {}, action) {
 }
 
 
-export default combineReducers({categories, posts, comments})
+export default combineReducers({
+    categories,
+    posts,
+    comments,
+
+})

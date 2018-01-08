@@ -1,24 +1,27 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import {Button} from 'semantic-ui-react';
 
 //actions
 import {
     getCategories,
-    getPostByCategory
+    getPostByCategory,
+    getPosts
 } from '../actions'
 
 
 class Categories extends Component {
 
+    componentDidMount() {
+        this.props.getCategories();
+    };
 
     onClickCategories = (category) => {
         this.props.getPostByCategory(category)
     };
-
-    componentDidMount() {
-        this.props.getCategories();
+    onClickAllCategories = () => {
+        this.props.getPosts()
     };
 
     render() {
@@ -31,9 +34,9 @@ class Categories extends Component {
                     <div key={category.name} className="categories-bar">
                         <button onClick={() => this.onClickCategories(category.name)}
                                 className="ui black button">{category.name}</button>
-
                     </div>
                 ))}
+                <Button onClick={() => this.onClickAllCategories()}>All</Button>
             </div>
         )
     }
@@ -49,8 +52,8 @@ function mapStateToProps({categories}) {
 function mapDispatchToProps(dispatch) {
     return {
         getCategories: () => dispatch(getCategories()),
-        getPostByCategory: (category) => dispatch(getPostByCategory(category))
-
+        getPostByCategory: (category) => dispatch(getPostByCategory(category)),
+        getPosts: () => dispatch(getPosts())
     }
 }
 

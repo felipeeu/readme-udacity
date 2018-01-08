@@ -40,7 +40,7 @@ class Newcomment extends Component {
         const { activeIndex } = this.state
         return (
 
-                <div>
+                <div className="newcomment-container">
                     <Accordion styled>
                         <Accordion.Title active={activeIndex === 1} index={1}
                                          onClick={this.handleClick}>

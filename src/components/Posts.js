@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Card, Icon, Button} from 'semantic-ui-react';
+import {formatTimestamp, pluralSingular} from "../utils";
 
 //actions
 import {
@@ -12,7 +13,7 @@ import {
 
 //components
 import Comments from './Comments';
-import Newcomment from './Newcomment'
+import Newcomment from './Newcomment';
 
 
 class Posts extends Component {
@@ -27,84 +28,81 @@ class Posts extends Component {
     };
 
     onClickVote = (postId, option) => {
-        this.props.votePost(postId, option)
-        this.props.getPosts()
+        this.props.votePost(postId, option);
+        this.props.getPosts();
     };
+
 
     render() {
         const {allposts} = this.props;
 
         return (
-            <div>
+            <div className="post-container">
                 {allposts &&
-                allposts.map(post => (
-                    <div key={post.id} className="post-body">
-                        <Card>
-                            <Card.Content>
-                                <Card.Header>
-                                    {post.title}
-                                </Card.Header>
-                                <Card.Meta>
+                allposts
+                    .map(post => (
+                        <div key={post.id} className="post-body">
+                            <Card>
+                                <Card.Content>
+                                    <Card.Header>
+                                        {post.title}
+                                    </Card.Header>
+                                    <Card.Meta>
         <span className='date'>
             {post.author}
         </span>
-                                </Card.Meta>
-                                <Card.Description>
-                                    {post.body}
-
-                                    <Newcomment parentId={post.id}/>
-                                    <br/>
-                                    <br/>
-                                    <Comments parentId={post.id}/>
-
-                                </Card.Description>
-                            </Card.Content>
-                            <Card.Content extra>
-                                <a>
-                                    <Icon name='barcode'/>
-                                    {post.category}
-                                </a>
-                                <p>{Date(post.timestamp)}</p>
+                                    </Card.Meta>
+                                    <Card.Description>
+                                        {post.body}
+                                        <Newcomment parentId={post.id}/>
+                                        <Comments parentId={post.id}/>
+                                        <p> {pluralSingular(post.commentCount, 'comment')}</p>
 
 
-                                <Button
-                                    onClick={() => {
-                                        this.onClickVote(post.id, 'upVote');
-                                    }}
-                                    content='Like'
-                                    icon='heart'
-                                    label={{as: 'a', basic: true, content: post.voteScore}}
-                                    labelPosition='right'
-                                    positive= {true}
-                                />
-                                <Button
-                                    onClick={() => {
-                                        this.onClickVote(post.id, 'downVote');
-                                    }}
-                                    content='Dislike'
-                                    icon='dislike outline'
-                                    labelPosition='left'
-                                    negative={true}
-                                />
-
-
-                                <button onClick={() => this.onClickDeletePost(post.id)} className="ui icon basic button"
-                                        id="deleteButton">
-                                    <i aria-hidden="true" className="trash icon"/>
-                                </button>
-                            </Card.Content>
-                        </Card>
-                    </div>
-                ))}
+                                    </Card.Description>
+                                </Card.Content>
+                                <Card.Content extra>
+                                    <a>
+                                        <Icon name='barcode'/>
+                                        {post.category}
+                                    </a>
+                                    <p>{formatTimestamp(post.timestamp)}</p>
+                                    <Button
+                                        onClick={() => {
+                                            this.onClickVote(post.id, 'upVote');
+                                        }}
+                                        content='Like'
+                                        icon='thumbs outline up'
+                                        label={{as: 'a', basic: true, content: post.voteScore}}
+                                        labelPosition='right'
+                                    />
+                                    <Button
+                                        onClick={() => {
+                                            this.onClickVote(post.id, 'downVote');
+                                        }}
+                                        content='Dislike'
+                                        icon='dislike outline'
+                                        labelPosition='left'
+                                    />
+                                    <div className='post-delete-button'>
+                                        <button onClick={() => this.onClickDeletePost(post.id)}
+                                                className="ui icon basic button"
+                                                id="deleteButton">
+                                            <i aria-hidden="true" className="trash icon"/>
+                                        </button>
+                                    </div>
+                                </Card.Content>
+                            </Card>
+                        </div>
+                    ))}
             </div>
         )
     }
 }
 
 function mapStateToProps({posts}) {
-
     return {
-        allposts: posts,
+        allposts: posts
     }
 }
 
@@ -113,10 +111,10 @@ function mapDispatchToProps(dispatch) {
         getPosts: () => dispatch(getPosts()),
         deletePost: (id) => dispatch(deletePost(id)),
         votePost: (id, option) => dispatch(votePost(id, option))
+
     }
 }
 
 export default withRouter(connect(mapStateToProps
     , mapDispatchToProps)(Posts))
-
 
