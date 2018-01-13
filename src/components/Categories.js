@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Button} from 'semantic-ui-react';
 
@@ -31,12 +31,18 @@ class Categories extends Component {
                 {allcategories &&
                 allcategories.map(category => (
                     <div key={category.name} className="categories-button">
-                        <button onClick={() => this.onClickCategories(category.name)}
+                        <Link to={`/${category.path}`}>
+                            <button
+                                onClick={() => this.onClickCategories(category.name)}
                                 className="ui black button">{category.name}</button>
+                        </Link>
                     </div>
                 ))}
-                <Button onClick={() => this.onClickAllCategories()}
+                <Link to="/">
+                    <Button
+                        onClick={() => this.onClickAllCategories()}
                         content='All'/>
+                </Link>
             </div>
         )
     }
