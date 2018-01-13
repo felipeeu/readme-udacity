@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Card, Icon, Button} from 'semantic-ui-react';
 import {formatTimestamp, pluralSingular} from "../utils";
@@ -8,11 +8,13 @@ import {formatTimestamp, pluralSingular} from "../utils";
 import {
     getPosts,
     deletePost,
-    votePost
+    votePost,
+    getCommentsByPosts,
+    editPost
 } from '../actions';
 
 //components
-import Comments from './Comments';
+
 import Newcomment from './Newcomment';
 
 
@@ -28,6 +30,10 @@ class Posts extends Component {
     onClickVote = (postId, option) => {
         this.props.votePost(postId, option);
         this.props.getPosts();
+    };
+
+    onClickEditPost = (postId, title, body)=> {
+        this.props.editPost(postId, title, body);
     };
 
     render() {
@@ -52,7 +58,12 @@ class Posts extends Component {
                                     <Card.Description>
                                         {post.body}
                                         <Newcomment parentId={post.id}/>
-                                        <Comments parentId={post.id}/>
+
+                                        <Link to={`/${post.category}/${post.id}`}>
+                                            <Button
+                                                content='Post Detail'/>
+                                        </Link>
+
                                         <p> {pluralSingular(post.commentCount, 'comment')}</p>
                                     </Card.Description>
                                 </Card.Content>
@@ -85,6 +96,10 @@ class Posts extends Component {
                                                 id="deleteButton">
                                             <i aria-hidden="true" className="trash icon"/>
                                         </button>
+                                        <Button
+                                            onClick={() => this.onClickEditPost(post.id, post.title, post.body)}
+                                            content="Edit"/>
+
                                     </div>
                                 </Card.Content>
                             </Card>
@@ -95,18 +110,24 @@ class Posts extends Component {
     }
 }
 
-function mapStateToProps({posts}) {
+function mapStateToProps({posts}, {match}) {
+    const {category} = match.params;
+
     return {
-        allposts: posts
+        allposts: category ? posts.filter(post => post.category === category) : posts
     }
 }
+
 function mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
         deletePost: (id) => dispatch(deletePost(id)),
-        votePost: (id, option) => dispatch(votePost(id, option))
+        votePost: (id, option) => dispatch(votePost(id, option)),
+        getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
+        editPost: (postId, title, body) => dispatch(editPost(postId, title, body))
     }
 }
+
 export default withRouter(connect(mapStateToProps
     , mapDispatchToProps)(Posts))
 
