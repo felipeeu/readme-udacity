@@ -16,17 +16,32 @@ class Newpost extends Component {
         this.props.getCategories()
     };
 
+
     addNewPost = e => {
-        const submitPost = {
-            id: guid(),
-            timestamp: Date.now(),
-            author: e.target.author.value,
-            title: e.target.title.value,
-            body: e.target.body.value,
-            category: e.target.category.value
-        };
-        this.props.newPost(submitPost);
+
+        const errors = {};
+
+        if (!e.target.author.value || e.target.author.value.trim() === '') {
+            alert('Enter a author');
+        }
+        else if (!e.target.title.value || e.target.title.value.trim() === '') {
+            alert('Enter a title');
+        }
+        else {
+
+            const submitPost = {
+                id: guid(),
+                timestamp: Date.now(),
+                author: e.target.author.value,
+                title: e.target.title.value,
+                body: e.target.body.value,
+                category: e.target.category.value
+            };
+            this.props.newPost(submitPost);
+        }
+        return errors;
     };
+
 
     render() {
         const {allcategories} = this.props;
