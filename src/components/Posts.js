@@ -32,10 +32,6 @@ class Posts extends Component {
         this.props.getPosts();
     };
 
-    onClickEditPost = (postId, title, body)=> {
-        this.props.editPost(postId, title, body);
-    };
-
     render() {
         const {allposts} = this.props;
 
@@ -65,42 +61,52 @@ class Posts extends Component {
                                         </Link>
 
                                         <p> {pluralSingular(post.commentCount, 'comment')}</p>
+                                        <div className="vote-post-button">
+                                            <Button
+                                                onClick={() => {
+                                                    this.onClickVote(post.id, 'upVote');
+                                                }}
+                                                content='Like'
+                                                icon='thumbs outline up'
+                                                label={{as: 'a', basic: true, content: post.voteScore}}
+                                                labelPosition='right'
+                                            />
+                                            <Button
+                                                onClick={() => {
+                                                    this.onClickVote(post.id, 'downVote');
+                                                }}
+                                                content='Dislike'
+                                                icon='dislike outline'
+                                                labelPosition='left'
+                                            />
+                                        </div>
                                     </Card.Description>
                                 </Card.Content>
                                 <Card.Content extra>
+
                                     <a>
                                         <Icon name='barcode'/>
                                         {post.category}
                                     </a>
                                     <p>{formatTimestamp(post.timestamp)}</p>
-                                    <Button
-                                        onClick={() => {
-                                            this.onClickVote(post.id, 'upVote');
-                                        }}
-                                        content='Like'
-                                        icon='thumbs outline up'
-                                        label={{as: 'a', basic: true, content: post.voteScore}}
-                                        labelPosition='right'
-                                    />
-                                    <Button
-                                        onClick={() => {
-                                            this.onClickVote(post.id, 'downVote');
-                                        }}
-                                        content='Dislike'
-                                        icon='dislike outline'
-                                        labelPosition='left'
-                                    />
-                                    <div className='post-delete-button'>
-                                        <button onClick={() => this.onClickDeletePost(post.id)}
-                                                className="ui icon basic button"
-                                                id="deleteButton">
-                                            <i aria-hidden="true" className="trash icon"/>
-                                        </button>
-                                        <Button
-                                            onClick={() => this.onClickEditPost(post.id, post.title, post.body)}
-                                            content="Edit"/>
 
+
+                                    <div className='post-delete-button'>
+                                        <Link to={`/${post.category}/${post.id}/edit`}>
+                                            <Button
+                                                content="Edit"
+                                                icon="edit"
+                                                labelPosition="left"
+                                            />
+                                        </Link>
+
+                                        <Button onClick={() => this.onClickDeletePost(post.id)}
+                                                content="Delete"
+                                                icon="trash"
+                                                id="deleteButton"
+                                                labelPosition="right"/>
                                     </div>
+
                                 </Card.Content>
                             </Card>
                         </div>

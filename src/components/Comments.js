@@ -16,12 +16,13 @@ import {
 class Comments extends Component {
 
     componentDidMount = () => {
-        this.props.getCommentsByPosts(this.props.parentId)
+        //this.props.getCommentsByPosts(this.props.postId)
     };
     onClickDeleteComment = (commentId) => {
         this.props.deleteComment(commentId);
-        this.props.getCommentsByPosts(this.props.parentId);
-        this.props.getPosts();
+        this.props.history.push(`/post/${this.props.postId}`);
+        this.props.getCommentsByPosts(this.props.postId);
+        //this.props.getPosts();
     };
     onClickVoteComment = (commentId, parentId, option) => {
         this.props.voteComment(commentId, parentId, option)
@@ -79,10 +80,11 @@ class Comments extends Component {
     }
 }
 
-function mapStateToProps({comments}, {parentId}) {
+function mapStateToProps({comments}, {match}) {
 
     return {
-        allcomments: comments[parentId]
+        allcomments: comments[match.params.postId],
+        postId: match.params.postId
     }
 }
 

@@ -11,7 +11,8 @@ import {
     DELETE_COMMENT,
     VOTE_POST,
     VOTE_COMMENT,
-    SORT_POSTS
+    SORT_POSTS,
+    EDIT_POST
 
 } from "../actions/index";
 //Categories
@@ -58,7 +59,7 @@ function posts(state = [], action) {
 }
 //Comments
 function comments(state = {}, action) {
-    const {comments, parentId, comment, id, currentComment} = action;
+    const {comments, parentId, comment, id, currentComment, editedPost} = action;
 
     switch (action.type) {
         case GET_COMMENT_BY_POST:
@@ -74,6 +75,14 @@ function comments(state = {}, action) {
                     .filter(vote => vote.id !== id)
                     .concat([currentComment])
             };
+
+        case EDIT_POST:
+            return state.map(post => {
+                if (post.id === id) {
+                    post = editedPost;
+                }
+                return post;
+            });
         default:
             return state
     }

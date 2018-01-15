@@ -8,7 +8,8 @@ export const ADD_POST = 'ADD_POST';
 export const GET_POST_BY_CATEGORY = 'GET_POST_BY_CATEGORY';
 export const DELETE_POST = 'DELETE_POST';
 export const VOTE_POST = 'VOTE_POST';
-export const SORT_POSTS = 'SORT_POSTS'
+export const SORT_POSTS = 'SORT_POSTS';
+export const EDIT_POST = 'EDIT_POST'
 //Comments actions
 export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
@@ -100,6 +101,18 @@ export const sortPosts = (sortType) => {
     }
 };
 
+export const editPost = (postId, title, body) => {
+    return dispatch => {
+        API.editPost(postId, title, body)
+            .then(editedPost => {
+                dispatch({
+                    type: EDIT_POST,
+                    editedPost,
+                    postId
+                });
+            })
+    };
+};
 
 //Comments actions
 export const getCommentsByPosts = (parentId) => {

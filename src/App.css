@@ -17,8 +17,6 @@
     font-size: large;
 }
 
-
-
 .categories-bar {
 
     display: inline-flex;
@@ -31,21 +29,22 @@
 
 }
 
-.submit{
+.submit {
     padding-top: 20%;
+
 }
 
 .post-delete-button {
     padding-top: 5%;
-    margin-left: 85%;
+
 }
 
-.sort-button{
+.sort-button {
     padding: 5%;
 }
 
-.comment-div{
-    display:block;
+.comment-div {
+    display: block;
     padding-top: 3%;
     flex-wrap: wrap;
 }
@@ -54,16 +53,16 @@
     display: inline-grid;
 }
 
-.comment-div{
-    display:block;
+.comment-div {
+    display: block;
     padding-top: 3%;
     flex-wrap: wrap;
 }
 
-.comment-body{
+.comment-body {
     display: block;
     word-wrap: break-word;
-    font-family:AppleGothic;
+    font-family: AppleGothic;
     font-size: 12px;
 }
 
@@ -77,7 +76,11 @@
 
 }
 
-.newcomment-container{
+.newcomment-container {
     padding: 5%;
+}
+
+.vote-post-button{
+    padding: 5%
 }
 

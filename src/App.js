@@ -12,8 +12,8 @@ import {sortPosts} from './actions'
 import Categories from '../src/components/Categories'
 import Posts from '../src/components/Posts'
 import Newpost from './components/Newpost'
-import Postdetail from './components/Postdetail';
-
+import Postdetail from './components/Postdetail'
+import Editpost from './components/Editpost'
 
 class App extends Component {
 
@@ -67,6 +67,7 @@ class App extends Component {
                             <Route exact path="/newpost" component={Newpost}/>
                             <Route exact path = "/:category" component={Posts}/>
                             <Route exact path="/:category/:postId" component={Postdetail}/>
+                            <Route path="/:category/:postId/edit" component={Editpost}/>
                             )}/>
                         </Switch>
                     </div>
