@@ -89,7 +89,6 @@ function mapStateToProps({posts}) {
     }
 }
 
-
 function mapDispatchToProps(dispatch) {
     return {
         newComment: (submitComment, parentId) => dispatch(newComment(submitComment, parentId))

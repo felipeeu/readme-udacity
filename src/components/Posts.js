@@ -9,7 +9,6 @@ import {
     getPosts,
     deletePost,
     votePost,
-    getCommentsByPosts,
     editPost
 } from '../actions';
 
@@ -129,7 +128,6 @@ function mapDispatchToProps(dispatch) {
         getPosts: () => dispatch(getPosts()),
         deletePost: (id) => dispatch(deletePost(id)),
         votePost: (id, option) => dispatch(votePost(id, option)),
-        getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
         editPost: (postId, title, body) => dispatch(editPost(postId, title, body))
     }
 }

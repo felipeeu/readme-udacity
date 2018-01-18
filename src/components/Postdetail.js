@@ -24,10 +24,8 @@ class Postdetail extends Component {
                     parentId={this.props.postId}
                     history={this.props.history}/>
             </div>
-
         )
     }
-
 }
 
 function mapStateToProps({posts}, {match}) {

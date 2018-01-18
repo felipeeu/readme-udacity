@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {Button} from 'semantic-ui-react';
 //actions
 import {
-
     getCommentsByPosts,
     editComment
-
 } from '../actions';
 
 class Editcomment extends Component {
@@ -16,7 +15,7 @@ class Editcomment extends Component {
 
     updateComment = e => {
         e.preventDefault();
-        const commentId = this.props.comment.id;
+        const commentId = this.props.commentId;
         const postId = this.props.parentId;
         const timestamp = Date.now();
         const body = e.target.body.value;
@@ -29,11 +28,14 @@ class Editcomment extends Component {
     };
 
     render() {
-
-        console.log(this.props.comment)
+        const {comment} = this.props;
         return (
             <div>
                 <div className="form">
+                    <Link to={`/post/${this.props.parentId}`}>
+                        <Button icon='close'
+                                circular={true}/>
+                    </Link>
                     <form onSubmit={this.updateComment} className="ui form">
                         <div className="equal width fields">
                             <div className="field">
@@ -42,19 +44,16 @@ class Editcomment extends Component {
                                             <textarea type="text"
                                                       name="body"
                                                       className="form-control"
-                                                      defaultValue="msg do cropo"
+                                                      defaultValue={comment.body}
                                                       placeholder="Comment"/>
                                 </div>
                                 <div className="submit">
-                                    <button type="submit"
-                                            className="ui icon left labeled button">
-                                        <i aria-hidden="true"
-                                           className="checkmark icon"/>Update Comment
-                                    </button>
+                                        <button type="submit"
+                                                className="ui icon left labeled button">
 
-                                    <Link to={`/post/${this.props.parentId}`}>
-                                        <button className="btn btn-danger">Cancel</button>
-                                    </Link>
+                                            <i aria-hidden="true"
+                                               className="checkmark icon"/>Update Comment
+                                        </button>
                                 </div>
                             </div>
                         </div>
@@ -66,17 +65,20 @@ class Editcomment extends Component {
 }
 
 function mapStateToProps({comments}, {match}) {
-    return {
-        allcomments: comments,
-        parentId: match.params.postId,
-        comment:  comments[match.params.postId].find(comment => comment.id === match.params.commentId)
-
-    };
+    if (!comments) {
+        return "carregando"
+    } else {
+        return {
+            allcomments: comments,
+            parentId: match.params.postId,
+            comment: comments && comments[match.params.postId] ? comments[match.params.postId].find(comment => comment.id === match.params.commentId) : {},
+            commentId: match.params.commentId
+        };
+    }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-
         getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
         editComment: (commentId, postId, timestamp, body) => dispatch(editComment(commentId, postId, timestamp, body))
     }
