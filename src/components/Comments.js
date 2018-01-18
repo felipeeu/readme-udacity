@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {Button} from 'semantic-ui-react';
+import {Button, Card, Icon} from 'semantic-ui-react';
 import sortBy from 'sort-by';
 
 //actions
 import {
-    getPosts,
     getCommentsByPosts,
     deleteComment,
     voteComment
@@ -15,14 +14,12 @@ import {
 
 class Comments extends Component {
 
-    componentDidMount = () => {
-        //this.props.getCommentsByPosts(this.props.postId)
-    };
+
     onClickDeleteComment = (commentId) => {
         this.props.deleteComment(commentId);
         this.props.history.push(`/post/${this.props.postId}`);
         this.props.getCommentsByPosts(this.props.postId);
-        //this.props.getPosts();
+
     };
     onClickVoteComment = (commentId, parentId, option) => {
         this.props.voteComment(commentId, parentId, option)
@@ -39,40 +36,55 @@ class Comments extends Component {
                     .reverse() // most voted in the top
                     .map(comment => (
                         <div key={comment.id} className="comment">
-                            <h5 className="comment-body">{comment.body}</h5>
-                            <h5 className="comment-author">{comment.author}</h5>
-                            <div>
-                                <Button
-                                    onClick={() => {
-                                        this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
-                                    }}
-                                    content='Like'
-                                    icon='thumbs outline up'
-                                    label={{as: 'a', basic: true, content: comment.voteScore}}
-                                    labelPosition='right'
-                                    size='mini'
-
-                                />
-                                <Button
-                                    onClick={() => {
-                                        this.onClickVoteComment(comment.id, comment.parentId, 'downVote');
-                                    }}
-                                    content='Dislike'
-                                    icon='dislike outline'
-                                    labelPosition='left'
-                                    size='mini'
-                                />
-                            </div>
-                            <br/>
-
-                            <Button
-                                onClick={() => this.onClickDeleteComment(comment.id)}
-                                content='Delete comment'
-                                icon='trash'
-                                labelPosition='left'
-                                size='mini'
-                            />
-                            <hr/>
+                            <Card>
+                                <Card.Content>
+                                    <Card.Header>
+                                        <Icon name='user'
+                                              color='grey'
+                                              size='small'/><br/>
+                                        {comment.author}
+                                    </Card.Header>
+                                    <Card.Description>
+                                        {comment.body}
+                                    </Card.Description>
+                                    <div className="edit-delete-comment-button">
+                                        <Link to={`/${this.props.category}/${comment.parentId}/${comment.id}/edit`}>
+                                            <Button
+                                                content='Edit'
+                                                size='mini'
+                                            />
+                                        </Link>
+                                        <Button
+                                            onClick={() => this.onClickDeleteComment(comment.id)}
+                                            icon='trash'
+                                            size='mini'
+                                        />
+                                    </div>
+                                </Card.Content>
+                                <Card.Content extra>
+                                    <div className='ui two buttons'>
+                                        <Button
+                                            onClick={() => {
+                                                this.onClickVoteComment(comment.id, comment.parentId, 'upVote');
+                                            }}
+                                            content='Like'
+                                            icon='thumbs outline up'
+                                            label={{as: 'a', basic: true, content: comment.voteScore}}
+                                            labelPosition='right'
+                                            size='mini'
+                                        />
+                                        <Button
+                                            onClick={() => {
+                                                this.onClickVoteComment(comment.id, comment.parentId, 'downVote');
+                                            }}
+                                            content='Dislike'
+                                            icon='dislike outline'
+                                            labelPosition='right'
+                                            size='mini'
+                                        />
+                                    </div>
+                                </Card.Content>
+                            </Card>
                         </div>
                     ))}
             </div>
@@ -90,7 +102,6 @@ function mapStateToProps({comments}, {match}) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        getPosts: () => dispatch(getPosts()),
         getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
         deleteComment: (commentId) => dispatch(deleteComment(commentId)),
         voteComment: (commentId, parentId, option) => dispatch(voteComment(commentId, parentId, option))

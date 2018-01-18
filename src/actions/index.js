@@ -15,7 +15,7 @@ export const GET_COMMENT_BY_POST = 'GET_COMMENT_BY_POST';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 export const VOTE_COMMENT = 'VOTE_COMMENT';
-
+export const EDIT_COMMENT = 'EDIT_COMMENT';
 
 //Categories actions
 export const getCategories = () => {
@@ -167,5 +167,21 @@ export const voteComment = (id, parentId, option) => {
     }
 };
 
+export const editComment = (commentId,
+                            parentId,
+                            timestamp,
+                            body,) => {
+    return dispatch => {
+        API.editComment(commentId, timestamp, body)
+            .then(editedComment => {
+                dispatch({
+                    type: EDIT_COMMENT,
+                    editedComment,
+                    commentId,
+                    parentId
+                })
+            })
+    }
+};
 
 

@@ -13,113 +13,129 @@ import {
 } from '../actions';
 
 class Editpost extends Component {
+
+   state = {
+
+   };
+
     componentDidMount() {
         this.props.getPosts();
         this.props.getCommentsByPosts(this.props.postId);
     }
 
+
     editPost = e => {
+
 
         const postId = this.props.postId;
         const title = e.target.title.value;
         const body = e.target.body.value;
+        const category = e.target.category.value
 
         if (body === '' || title === '') {
             alert('Both body and title fields are mandatory');
-        } else {
+        }
+        else if (category === 'Select the category') {
+            alert('Please , select the category')
+        }
+
+        else {
             this.props.editPost(postId, title, body);
         }
-    };
+    }
+    ;
 
     render() {
 
-        const {allcategories, postId} = this.props;
+        const {allcategories, post, allposts} = this.props;
 
-
+if (allposts===null) {this.componentDidMount() } else{
 
         return (
-            <div>
                 <div>
-                    <div className="form">
-                        <Link to='/'>
-                            <Button icon='close'
-                                    circular={true}/>
-                        </Link>
-                        <form onSubmit={this.editPost} className="ui form">
-                            <div className="equal width fields">
-                                <div className="field">
-                                    <label>Author</label>
-                                    <div className="ui input">
-                                        <input type="text"
-                                               defaultValue="Valor do autor"
-                                               name="author"
-                                               className="form-control"
-                                               placeholder="Author"/>
-                                    </div>
-                                    <label>Title</label>
-                                    <div className="ui input">
-                                        <input
-                                            defaultValue="valor do title"
-                                            type="text"
-                                            name="title"
-                                            className="form-control"
-                                            placeholder="Title"/>
-                                    </div>
-
+                    <div>
+                        <div className="form">
+                            <Link to='/'>
+                                <Button icon='close'
+                                        circular={true}/>
+                            </Link>
+                            <form onSubmit={this.editPost} className="ui form">
+                                <div className="equal width fields">
                                     <div className="field">
-                                        <label>Category</label>
-                                      <select>
-                                        {allcategories &&
-                                        allcategories.map(category => (
-                                            <option key={category.name} value={category.name}>{category.name}</option>
-                                        ))}
-                                      </select>
-                                    </div>
-                                    <label>Post</label>
-                                    <div className="ui input">
+                                        <label>Author</label>
+                                        <div className="ui input">
+                                            <input type="text"
+                                                   defaultValue={post.author}
+                                                   name="author"
+                                                   className="form-control"
+                                                   placeholder="Author"/>
+                                        </div>
+                                        <label>Title</label>
+                                        <div className="ui input">
+                                            <input
+                                                defaultValue={post.title}
+                                                type="text"
+                                                name="title"
+                                                className="form-control"
+                                                placeholder="Title"/>
+                                        </div>
+
+                                        <div className="field">
+                                            <label>Category</label>
+                                            <select name="category">
+                                                <option defaultValue>Select the category</option>
+                                                {allcategories &&
+                                                allcategories.map(category => (
+                                                    <option key={category.name}
+                                                            value={category.name}>{category.name}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                        <label>Post</label>
+                                        <div className="ui input">
                                     <textarea
-                                        defaultValue="Valor do corpo"
+                                        defaultValue={post.body}
                                         type="text"
                                         name="body"
                                         className="form-control"
                                         placeholder="Post"/>
-                                    </div>
-                                    <div className="submit">
-                                        <Button
-                                            type="submit"
-                                            content="Update Post"
-                                            icon='checkmark'
-                                            labelPosition='left'
-                                        />
-                                        <Link to={`/post/${postId}`}>
+                                        </div>
+                                        <div className="submit">
                                             <Button
-                                                content="Cancel"
-                                                className="btn btn-danger"/>
-                                        </Link>
+                                                type="submit"
+                                                content="Update Post"
+                                                icon='checkmark'
+                                                labelPosition='left'
+                                            />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        );
+        );}
     }
 }
 
-function mapStateToProps({posts, comments, categories}, {match}) {
+function
+
+mapStateToProps({posts, comments, categories }, {match}) {
 
     return {
         allposts: posts,
         comments: comments[match.params.postId],
         postId: match.params.postId,
         allcategories: categories,
-        category: match.params.category
+        category: match.params.category,
+        post: posts.find(post => post.id === match.params.postId),
 
     };
 }
 
-function mapDispatchToProps(dispatch) {
+function
+
+mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
         getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),

@@ -77,7 +77,7 @@ class Posts extends Component {
                                                 }}
                                                 content='Dislike'
                                                 icon='dislike outline'
-                                                labelPosition='left'
+                                                labelPosition='right'
                                             />
                                         </div>
                                     </Card.Description>
@@ -92,7 +92,7 @@ class Posts extends Component {
 
 
                                     <div className='post-delete-button'>
-                                        <Link to={`/${post.category}/${post.id}/edit`}>
+                                        <Link to={`/${post.category}/${post.id}/edit/`}>
                                             <Button
                                                 content="Edit"
                                                 icon="edit"

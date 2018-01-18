@@ -12,7 +12,8 @@ import {
     VOTE_POST,
     VOTE_COMMENT,
     SORT_POSTS,
-    EDIT_POST
+    EDIT_POST,
+    EDIT_COMMENT
 
 } from "../actions/index";
 //Categories
@@ -27,7 +28,7 @@ function categories(state = [], action) {
 }
 //Posts
 function posts(state = [], action) {
-    const {post, posts, postId, sortType} = action;
+    const {post, posts, postId, sortType,editedPost} = action;
 
     switch (action.type) {
         case GET_POST:
@@ -53,13 +54,20 @@ function posts(state = [], action) {
             });
         case SORT_POSTS:
             return [].concat(state.sort(sortBy('-' + sortType)));
+        case EDIT_POST:
+            return state.map(post => {
+                if (post.id === postId) {
+                    post = editedPost;
+                }
+                return post;
+            });
         default:
             return state
     }
 }
 //Comments
 function comments(state = {}, action) {
-    const {comments, parentId, comment, id, currentComment, editedPost} = action;
+    const {comments, parentId, comment, id, currentComment, commentId, editedComment } = action;
 
     switch (action.type) {
         case GET_COMMENT_BY_POST:
@@ -75,14 +83,16 @@ function comments(state = {}, action) {
                     .filter(vote => vote.id !== id)
                     .concat([currentComment])
             };
-
-        case EDIT_POST:
-            return state.map(post => {
-                if (post.id === id) {
-                    post = editedPost;
-                }
-                return post;
-            });
+        case EDIT_COMMENT:
+            return {
+                ...state,
+                [parentId]: state[parentId].map(comment => {
+                    if (comment.id === commentId) {
+                        comment = editedComment;
+                    }
+                    return comment;
+                })
+            };
         default:
             return state
     }

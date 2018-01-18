@@ -27,6 +27,9 @@ class Newpost extends Component {
         else if (!e.target.title.value || e.target.title.value.trim() === '') {
             alert('Enter a title');
         }
+        else if (e.target.category.value === 'Select the category') {
+            alert('Select the category');
+        }
         else {
 
             const submitPost = {
@@ -75,6 +78,7 @@ class Newpost extends Component {
                                 <div className="field">
                                     <label>Category</label>
                                     <select name="category" className="btn btn-default dropdown-toggle">
+                                        <option defaultValue> Select the category</option>
                                         {allcategories &&
                                         allcategories.map(category => (
                                             <option key={category.name} value={category.name}>{category.name}</option>

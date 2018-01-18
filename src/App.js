@@ -14,6 +14,7 @@ import Posts from '../src/components/Posts'
 import Newpost from './components/Newpost'
 import Postdetail from './components/Postdetail'
 import Editpost from './components/Editpost'
+import Editcomment from './components/Editcomment'
 
 class App extends Component {
 
@@ -65,9 +66,10 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Posts}/>
                             <Route exact path="/newpost" component={Newpost}/>
-                            <Route exact path = "/:category" component={Posts}/>
+                            <Route exact path="/:category" component={Posts}/>
                             <Route exact path="/:category/:postId" component={Postdetail}/>
                             <Route path="/:category/:postId/edit" component={Editpost}/>
+                            <Route path="/:category/:postId/:commentId/edit" component={Editcomment}/>
                             )}/>
                         </Switch>
                     </div>
@@ -81,6 +83,7 @@ function mapStateToProps() {
 
     return {}
 }
+
 export default withRouter(
     connect(
         mapStateToProps,
