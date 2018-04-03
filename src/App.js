@@ -28,7 +28,9 @@ class App extends Component {
 
             <div className="App">
                 <header className="App-header">
+                    <Link to="/">
                     <h1 className="App-title">Leitura-Udacity</h1>
+                    </Link>
                 </header>
                 <Link to="/newpost">
                     <button className="ui animated button">
