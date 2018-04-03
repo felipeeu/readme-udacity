@@ -8,6 +8,7 @@ import {
 } from '../actions';
 
 import Comments from './Comments';
+import Posts from './Posts';
 
 class Postdetail extends Component {
 
@@ -19,6 +20,7 @@ class Postdetail extends Component {
 
         return (
             <div>
+                <Posts/>
                 <Comments
                     category={this.props.category}
                     parentId={this.props.postId}
