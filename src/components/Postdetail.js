@@ -4,10 +4,10 @@ import {connect} from 'react-redux';
 //actions
 import {
     getCommentsByPosts
-
 } from '../actions';
 
 import Comments from './Comments';
+import Posts from './Posts';
 
 class Postdetail extends Component {
 
@@ -16,9 +16,15 @@ class Postdetail extends Component {
     };
 
     render() {
+        const { allposts , postId  } = this.props;
+        const postIdArray = allposts.map(post => post.id)
 
+        if (!postIdArray.includes(postId)) {
+            return <div>No Post Found</div>
+        }
         return (
             <div>
+                <Posts/>
                 <Comments
                     category={this.props.category}
                     parentId={this.props.postId}
