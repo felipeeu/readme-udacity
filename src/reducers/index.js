@@ -75,7 +75,9 @@ function comments(state = {}, action) {
         case ADD_COMMENT :
             return state.concat([comment]);
         case DELETE_COMMENT:
-            return state;
+            var newState = Object.assign({}, state);
+            newState.data= action.data;
+            return newState;
         case VOTE_COMMENT:
             return {
                 ...state,

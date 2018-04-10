@@ -6,6 +6,7 @@ import sortBy from 'sort-by';
 
 //actions
 import {
+    getPosts,
     getCommentsByPosts,
     deleteComment,
     voteComment
@@ -17,8 +18,9 @@ class Comments extends Component {
 
     onClickDeleteComment = (commentId) => {
         this.props.deleteComment(commentId);
-        this.props.history.push(`/post/${this.props.postId}`);
+        //this.props.history.push(`/post/${this.props.postId}`);
         this.props.getCommentsByPosts(this.props.postId);
+        this.props.getPosts();
 
     };
     onClickVoteComment = (commentId, parentId, option) => {
@@ -102,6 +104,7 @@ function mapStateToProps({comments}, {match}) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        getPosts: () => dispatch(getPosts()),
         getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),
         deleteComment: (commentId) => dispatch(deleteComment(commentId)),
         voteComment: (commentId, parentId, option) => dispatch(voteComment(commentId, parentId, option))
