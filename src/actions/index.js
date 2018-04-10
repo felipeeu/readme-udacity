@@ -4,6 +4,7 @@ import * as API from '../leituraAPI';
 export const GET_CATEGORY = 'GET_CATEGORY';
 // Posts actions
 export const GET_POST = 'GET_POST';
+export const GET_POST_BY_ID = 'GET_POST_BY_ID';
 export const ADD_POST = 'ADD_POST';
 export const GET_POST_BY_CATEGORY = 'GET_POST_BY_CATEGORY';
 export const DELETE_POST = 'DELETE_POST';
@@ -64,6 +65,21 @@ export const getPostByCategory = (category) => {
                     posts
                 })
             })
+    }
+};
+
+
+export const getPostById = (postId) => {
+    return dispatch => {
+        API.fetchPostByid(postId)
+            .then(posts => {
+                dispatch({
+                    type: GET_POST_BY_ID,
+                    postId
+                })
+
+            })
+            .catch(e => console.log ( "errando!!!"))
     }
 };
 

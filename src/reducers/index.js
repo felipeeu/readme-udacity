@@ -3,6 +3,7 @@ import sortBy from 'sort-by';
 import {
     GET_CATEGORY,
     GET_POST,
+    GET_POST_BY_ID,
     GET_COMMENT_BY_POST,
     ADD_POST,
     GET_POST_BY_CATEGORY,
@@ -33,6 +34,8 @@ function posts(state = [], action) {
     switch (action.type) {
         case GET_POST:
             return action.posts;
+        case GET_POST_BY_ID:
+            return state.filter(post => post.id === postId);
         case ADD_POST:
             return state.concat([post]);
         case GET_POST_BY_CATEGORY:

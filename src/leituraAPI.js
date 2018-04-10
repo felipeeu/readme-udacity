@@ -59,7 +59,7 @@ export const editPost = (postId, title, body) => {
     return fetch(`${API}/posts/${postId}`, {
         method: 'PUT',
         headers: headers,
-        body: JSON.stringify({ title: title, body: body })
+        body: JSON.stringify({title: title, body: body})
     })
         .then(res => res.json())
 }
@@ -101,7 +101,13 @@ export const editComment = (commentId, timestamp, body) => {
     return fetch(`${API}/comments/${commentId}`, {
         method: 'PUT',
         headers: headers,
-        body: JSON.stringify({ timestamp: timestamp, body: body })
+        body: JSON.stringify({timestamp: timestamp, body: body})
     })
+        .then(res => res.json())
+}
+
+
+export const fetchPostByid = (postId) => {
+    return fetch(`${API}/posts/${postId}`, {headers})
         .then(res => res.json())
 }
