@@ -2,199 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5429f34c-1339-43f2-aa11-7bb1f2ee803b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/semantic/src/definitions/behaviors/colorize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/semantic/src/definitions/behaviors/state.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/semantic/src/definitions/behaviors/visit.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.eot" afterPath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.ttf" afterPath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.woff" afterPath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.woff2" afterPath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/assets/images/flags.png" afterPath="$PROJECT_DIR$/semantic/src/themes/default/assets/images/flags.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/table.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/table.overrides" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic.json" afterPath="$PROJECT_DIR$/semantic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/gulpfile.js" afterPath="$PROJECT_DIR$/semantic/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/behaviors/api.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/behaviors/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/behaviors/form.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/behaviors/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/behaviors/visibility.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/behaviors/visibility.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/collections/menu.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/collections/menu.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/collections/table.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/collections/table.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/button.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/button.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/container.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/container.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/header.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/header.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/icon.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/icon.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/image.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/image.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/input.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/input.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/label.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/label.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/list.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/elements/reveal.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/elements/reveal.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/globals/site.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/globals/site.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/globals/site.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/globals/site.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/accordion.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/accordion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/checkbox.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/dimmer.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/dimmer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/dimmer.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/dimmer.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/dropdown.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/dropdown.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/dropdown.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/embed.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/embed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/embed.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/embed.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/modal.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/modal.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/modal.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/nag.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/nag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/popup.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/popup.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/popup.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/progress.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/progress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/rating.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/rating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/rating.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/rating.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/search.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/search.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/search.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/shape.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/shape.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/sidebar.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/sidebar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/sticky.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/sticky.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/tab.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/tab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/modules/transition.js" afterPath="$PROJECT_DIR$/semantic/src/definitions/modules/transition.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/definitions/views/ad.less" afterPath="$PROJECT_DIR$/semantic/src/definitions/views/ad.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/theme.less" afterPath="$PROJECT_DIR$/semantic/src/theme.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/semantic/src/themes/default/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/breadcrumb.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/breadcrumb.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/breadcrumb.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/breadcrumb.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/form.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/form.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/form.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/form.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/grid.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/grid.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/grid.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/grid.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/menu.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/menu.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/menu.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/menu.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/message.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/message.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/message.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/message.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/collections/table.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/collections/table.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/button.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/button.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/container.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/container.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/container.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/container.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/divider.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/divider.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/divider.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/divider.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/flag.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/flag.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/flag.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/flag.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/header.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/header.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/icon.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/icon.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/icon.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/icon.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/image.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/image.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/image.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/image.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/input.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/input.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/input.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/input.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/label.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/label.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/label.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/label.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/list.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/list.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/list.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/list.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/loader.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/loader.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/loader.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/loader.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/rail.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/rail.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/rail.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/rail.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/reveal.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/reveal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/reveal.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/reveal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/segment.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/segment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/segment.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/segment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/step.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/step.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/elements/step.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/elements/step.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/globals/reset.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/globals/reset.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/globals/site.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/globals/site.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/globals/site.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/accordion.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/accordion.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/accordion.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/accordion.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/chatroom.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/chatroom.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/chatroom.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/chatroom.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/checkbox.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/checkbox.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/checkbox.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/checkbox.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/dimmer.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/dimmer.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/dimmer.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/dimmer.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/dropdown.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/dropdown.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/dropdown.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/dropdown.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/embed.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/embed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/embed.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/embed.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/modal.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/modal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/modal.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/modal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/nag.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/nag.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/nag.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/nag.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/popup.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/popup.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/popup.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/popup.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/progress.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/progress.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/progress.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/progress.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/rating.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/rating.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/rating.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/rating.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/search.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/search.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/search.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/search.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/shape.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/shape.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/shape.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/shape.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/sidebar.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/sidebar.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/sidebar.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/sidebar.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/sticky.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/sticky.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/sticky.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/sticky.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/tab.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/tab.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/tab.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/tab.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/transition.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/transition.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/modules/transition.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/modules/transition.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/ad.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/ad.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/ad.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/ad.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/card.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/card.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/card.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/card.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/comment.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/comment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/comment.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/comment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/feed.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/feed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/feed.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/feed.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/item.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/item.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/item.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/item.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/statistic.overrides" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/statistic.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/src/themes/default/views/statistic.variables" afterPath="$PROJECT_DIR$/semantic/src/themes/default/views/statistic.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/README.md" afterPath="$PROJECT_DIR$/semantic/tasks/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/components/create.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/components/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/components/init.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/components/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/components/update.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/components/update.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/distributions/init.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/distributions/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/distributions/update.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/distributions/update.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/publish.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/publish.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/admin/register.js" afterPath="$PROJECT_DIR$/semantic/tasks/admin/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/build.js" afterPath="$PROJECT_DIR$/semantic/tasks/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/build/assets.js" afterPath="$PROJECT_DIR$/semantic/tasks/build/assets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/build/css.js" afterPath="$PROJECT_DIR$/semantic/tasks/build/css.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/build/javascript.js" afterPath="$PROJECT_DIR$/semantic/tasks/build/javascript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/check-install.js" afterPath="$PROJECT_DIR$/semantic/tasks/check-install.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/clean.js" afterPath="$PROJECT_DIR$/semantic/tasks/clean.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/collections/README.md" afterPath="$PROJECT_DIR$/semantic/tasks/collections/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/collections/admin.js" afterPath="$PROJECT_DIR$/semantic/tasks/collections/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/collections/build.js" afterPath="$PROJECT_DIR$/semantic/tasks/collections/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/collections/internal.js" afterPath="$PROJECT_DIR$/semantic/tasks/collections/internal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/collections/rtl.js" afterPath="$PROJECT_DIR$/semantic/tasks/collections/rtl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/github.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/github.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/oauth.example.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/oauth.example.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/release.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/README.md" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/bower.json" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/component-package.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/component-package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/composer.json" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/css-package.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/css-package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/less-package.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/less-package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/package.json" afterPath="$PROJECT_DIR$/semantic/tasks/config/admin/templates/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/defaults.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/defaults.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/docs.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/docs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/npm/gulpfile.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/npm/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/project/config.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/project/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/project/release.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/project/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/config/user.js" afterPath="$PROJECT_DIR$/semantic/tasks/config/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/docs/build.js" afterPath="$PROJECT_DIR$/semantic/tasks/docs/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/docs/metadata.js" afterPath="$PROJECT_DIR$/semantic/tasks/docs/metadata.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/docs/serve.js" afterPath="$PROJECT_DIR$/semantic/tasks/docs/serve.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/rtl/build.js" afterPath="$PROJECT_DIR$/semantic/tasks/rtl/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/rtl/watch.js" afterPath="$PROJECT_DIR$/semantic/tasks/rtl/watch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/version.js" afterPath="$PROJECT_DIR$/semantic/tasks/version.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/semantic/tasks/watch.js" afterPath="$PROJECT_DIR$/semantic/tasks/watch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/index.js" afterPath="$PROJECT_DIR$/src/actions/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Newcomment.js" afterPath="$PROJECT_DIR$/src/components/Newcomment.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Comments.js" afterPath="$PROJECT_DIR$/src/components/Comments.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Postdetail.js" afterPath="$PROJECT_DIR$/src/components/Postdetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/leituraAPI.js" afterPath="$PROJECT_DIR$/src/leituraAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/index.js" afterPath="$PROJECT_DIR$/src/reducers/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Posts.js" afterPath="$PROJECT_DIR$/src/components/Posts.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -208,14 +19,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Postdetail.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Postdetail.js">
+      <file leaf-file-name="Posts.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="-1154">
+              <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#88#157#0" expanded="true" />
+                <element signature="e#251#337#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -254,14 +64,14 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/components/Editpost.js" />
-        <option value="$PROJECT_DIR$/src/components/Posts.js" />
-        <option value="$PROJECT_DIR$/src/components/Comments.js" />
-        <option value="$PROJECT_DIR$/src/components/Newcomment.js" />
-        <option value="$PROJECT_DIR$/src/leituraAPI.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/components/Editcomment.js" />
+        <option value="$PROJECT_DIR$/src/leituraAPI.js" />
+        <option value="$PROJECT_DIR$/src/components/Newcomment.js" />
         <option value="$PROJECT_DIR$/src/components/Postdetail.js" />
+        <option value="$PROJECT_DIR$/src/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Comments.js" />
+        <option value="$PROJECT_DIR$/src/components/Posts.js" />
       </list>
     </option>
   </component>
@@ -282,10 +92,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="33" />
-    <option name="y" value="54" />
-    <option name="width" value="1541" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="209" />
+    <option name="y" value="23" />
+    <option name="width" value="1874" />
     <option name="height" value="993" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -320,8 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,24 +146,14 @@
               <item name="leitura-10jan" type="b2602c69:ProjectViewProjectNode" />
               <item name="leitura-10jan" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leitura-10jan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leitura-10jan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leitura-10jan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leitura-10jan" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,12 +270,13 @@
       <workItem from="1516275194881" duration="371000" />
       <workItem from="1516294107842" duration="5032000" />
       <workItem from="1516299998853" duration="344000" />
-      <workItem from="1523370587959" duration="14526000" />
+      <workItem from="1523370587959" duration="14587000" />
+      <workItem from="1523431749080" duration="3724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347293000" />
+    <option name="totallyTimeSpent" value="351078000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -489,10 +288,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="33" y="54" width="1541" height="993" extended-state="0" />
+    <frame x="209" y="23" width="1874" height="993" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15986842" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1311387" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.57522124" sideWeight="0.5018431" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -811,16 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Editpost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <element signature="e#170#251#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-44">
@@ -833,7 +622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="354" column="0" lean-forward="false" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,48 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Newcomment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-828">
-          <caret line="1" column="44" lean-forward="false" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
-          <folding>
-            <marker date="1523385034000" expanded="true" signature="1003:3301" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1038:3282" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1424:3212" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1475:3181" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1564:3146" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1637:3106" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1701:3063" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1838:2128" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="1920:2077" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="2266:2498" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="2370:2447" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="2567:3016" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="2638:2965" ph="..." />
-            <marker date="1523385034000" expanded="true" signature="2809:2892" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/leituraAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-265">
-          <caret line="40" column="13" lean-forward="false" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,16 +638,6 @@
           <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-538">
-          <caret line="51" column="53" lean-forward="false" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="53" />
-          <folding>
-            <element signature="e#223#325#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -922,21 +658,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Posts.js">
+    <entry file="file://$PROJECT_DIR$/src/leituraAPI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="127" column="10" lean-forward="false" selection-start-line="127" selection-start-column="9" selection-end-line="127" selection-end-column="10" />
+        <state relative-caret-position="177">
+          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Newcomment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <marker date="1523436103000" expanded="true" signature="1002:3300" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1037:3281" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1423:3211" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1474:3180" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1563:3145" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1636:3105" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1700:3062" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1837:2127" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="1919:2076" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="2265:2497" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="2369:2446" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="2566:3015" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="2637:2964" ph="..." />
+            <marker date="1523436103000" expanded="true" signature="2808:2891" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Comments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-974">
+          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding>
+            <element signature="e#223#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Editpost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Postdetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="461">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#88#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1154">
+          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <element signature="e#251#337#0" expanded="true" />
           </folding>
         </state>
       </provider>

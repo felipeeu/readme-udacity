@@ -18,7 +18,6 @@ class Comments extends Component {
 
     onClickDeleteComment = (commentId) => {
         this.props.deleteComment(commentId);
-        //this.props.history.push(`/post/${this.props.postId}`);
         this.props.getCommentsByPosts(this.props.postId);
         this.props.getPosts();
 

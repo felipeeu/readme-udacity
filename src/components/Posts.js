@@ -33,7 +33,10 @@ class Posts extends Component {
 
     render() {
         const {allposts} = this.props;
-
+        
+        if (allposts.length === 0) {
+            return <div>No Post Found</div>
+        }
         return (
             <div className="post-container">
                 {allposts &&
@@ -119,7 +122,8 @@ function mapStateToProps({posts}, {match}) {
     const {category} = match.params;
 
     return {
-        allposts: category ? posts.filter(post => post.category === category) : posts
+        allposts: category ? posts.filter(post => post.category === category) : posts,
+        postId: match.params.postId
     }
 }
 
