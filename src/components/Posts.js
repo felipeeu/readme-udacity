@@ -1,9 +1,18 @@
 import React, {Component} from 'react';
-import {withRouter, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {Card, Icon, Button} from 'semantic-ui-react';
-import {formatTimestamp, pluralSingular} from "../utils";
-
+import {
+    withRouter,
+    Link
+} from 'react-router-dom';
+import {
+    Card,
+    Icon,
+    Button
+} from 'semantic-ui-react';
+import {
+    formatTimestamp,
+    pluralSingular
+} from "../utils";
 //actions
 import {
     getPosts,
@@ -11,14 +20,10 @@ import {
     votePost,
     editPost
 } from '../actions';
-
 //components
-
 import Newcomment from './Newcomment';
 
-
 class Posts extends Component {
-
 
     componentDidMount = () => {
         this.props.getPosts()
@@ -39,8 +44,7 @@ class Posts extends Component {
         }
         return (
             <div className="post-container">
-                {allposts &&
-                allposts
+                {allposts && allposts
                     .map(post => (
                         <div key={post.id} className="post-body">
                             <Card>
@@ -49,9 +53,9 @@ class Posts extends Component {
                                         {post.title}
                                     </Card.Header>
                                     <Card.Meta>
-        <span className='date'>
-            {post.author}
-        </span>
+                                        <span className='date'>
+                                            {post.author}
+                                        </span>
                                     </Card.Meta>
                                     <Card.Description>
                                         {post.body}

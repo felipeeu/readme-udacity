@@ -16,10 +16,7 @@ class Newpost extends Component {
         this.props.getCategories()
     };
 
-
     addNewPost = e => {
-
-        const errors = {};
 
         if (!e.target.author.value || e.target.author.value.trim() === '') {
             alert('Enter a author');
@@ -42,7 +39,6 @@ class Newpost extends Component {
             };
             this.props.newPost(submitPost);
         }
-        return errors;
     };
 
 
@@ -54,10 +50,13 @@ class Newpost extends Component {
             <div>
                 <div className="form">
                     <Link to='/'>
-                        <Button icon='close'
-                                circular={true}/>
+                        <Button 
+                            icon='close'
+                            circular={true}/>
                     </Link>
-                    <form onSubmit={this.addNewPost} className="ui form">
+                    <form 
+                        onSubmit={this.addNewPost} 
+                        className="ui form">
                         <div className="equal width fields">
                             <div className="field">
                                 <label>Author</label>
@@ -69,24 +68,34 @@ class Newpost extends Component {
                                 </div>
                                 <label>Title</label>
                                 <div className="ui input">
-                                    <input type="text"
-                                           name="title"
-                                           className="form-control"
-                                           placeholder="Title"/>
+                                    <input 
+                                        type="text"
+                                        name="title"
+                                        className="form-control"
+                                        placeholder="Title"/>
                                 </div>
 
                                 <div className="field">
-                                    <label>Category</label>
-                                    <select name="category" className="btn btn-default dropdown-toggle">
+                                    <label>
+                                        Category
+                                    </label>
+                                    <select 
+                                        name="category" 
+                                        className="btn btn-default dropdown-toggle">
                                         <option defaultValue> Select the category</option>
-                                        {allcategories &&
-                                        allcategories.map(category => (
-                                            <option key={category.name} value={category.name}>{category.name}</option>
+                                        {allcategories && allcategories.map(category => (
+                                            <option 
+                                                key={category.name} 
+                                                value={category.name}>
+                                                {category.name}
+                                            </option>
                                         ))}
                                     </select>
                                 </div>
 
-                                <label>Post</label>
+                                <label>
+                                    Post
+                                </label>
                                 <div className="ui input">
                                     <textarea type="text"
                                               name="body"
@@ -94,8 +103,13 @@ class Newpost extends Component {
                                               placeholder="Post"/>
                                 </div>
                                 <div className="submit">
-                                    <button type="submit" className="ui icon left labeled button">
-                                        <i aria-hidden="true" className="checkmark icon"/>Add New Post
+                                    <button 
+                                        type="submit" 
+                                        className="ui icon left labeled button">
+                                        <i 
+                                            aria-hidden="true" 
+                                            className="checkmark icon"/>
+                                            Add New Post
                                     </button>
                                 </div>
                             </div>

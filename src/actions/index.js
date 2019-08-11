@@ -28,6 +28,7 @@ export const getCategories = () => {
                     payload
                 })
             })
+            .catch(err => err)
     }
 };
 
@@ -41,6 +42,7 @@ export const getPosts = () => {
                     posts
                 })
             })
+            .catch(err => err)
     }
 };
 
@@ -53,6 +55,7 @@ export const newPost = (post) => {
                     post
                 })
             )
+            .catch(err => err)
     }
 };
 
@@ -65,46 +68,48 @@ export const getPostByCategory = (category) => {
                     posts
                 })
             })
+            .catch(err => err)
     }
 };
-
 
 export const getPostById = (postId) => {
     return dispatch => {
         API.fetchPostByid(postId)
-            .then(posts => {
+            .then(() => {
                 dispatch({
                     type: GET_POST_BY_ID,
                     postId
                 })
 
             })
-            .catch(e => console.log ( "errando!!!"))
+            .catch(err => err)
     }
 };
 
 export const deletePost = (postId) => {
     return dispatch => {
         API.deletePost(postId)
-            .then(posts =>
+            .then(() =>
                 dispatch({
                     type: DELETE_POST,
                     postId
                 })
             )
+            .catch(err => err)
     }
 };
 
 export const votePost = (id, option) => {
     return dispatch => {
         API.votePost(id, option)
-            .then(post => {
+            .then(() => {
                 dispatch({
                     type: VOTE_POST,
                     id,
                     option
                 })
             })
+            .catch(err => err)
     }
 };
 
@@ -127,6 +132,7 @@ export const editPost = (postId, title, body) => {
                     postId
                 });
             })
+            .catch(err => err)
     };
 };
 
@@ -141,6 +147,7 @@ export const getCommentsByPosts = (parentId) => {
                     comments
                 })
             })
+            .catch(err => err)
     }
 };
 
@@ -154,18 +161,20 @@ export const newComment = (comment, parentId) => {
                     comment
                 })
             })
+            .catch(err => err)
     }
 };
 
 export const deleteComment = (commentId) => {
     return dispatch => {
         API.deleteComment(commentId)
-            .then(comments =>
+            .then(() =>
                 dispatch({
                     type: DELETE_COMMENT,
                     commentId
                 })
             )
+            .catch(err => err)
     }
 };
 
@@ -180,6 +189,7 @@ export const voteComment = (id, parentId, option) => {
                     parentId
                 })
             })
+            .catch(err => err)
     }
 };
 
@@ -197,6 +207,7 @@ export const editComment = (commentId,
                     parentId
                 })
             })
+            .catch(err => err)
     }
 };
 

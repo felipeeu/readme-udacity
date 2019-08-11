@@ -100,9 +100,7 @@ class Editpost extends Component {
     }
 }
 
-function
-
-mapStateToProps({posts, comments }, {match}) {
+function mapStateToProps({posts, comments }, {match}) {
 
     return {
         allposts: posts,
@@ -114,9 +112,7 @@ mapStateToProps({posts, comments }, {match}) {
     };
 }
 
-function
-
-mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
     return {
         getPosts: () => dispatch(getPosts()),
         getCommentsByPosts: (parentId) => dispatch(getCommentsByPosts(parentId)),

@@ -36,7 +36,9 @@ class Editcomment extends Component {
                         <Button icon='close'
                                 circular={true}/>
                     </Link>
-                    <form onSubmit={this.updateComment} className="ui form">
+                    <form 
+                        onSubmit={this.updateComment} 
+                        className="ui form">
                         <div className="equal width fields">
                             <div className="field">
                                 <label>Comment</label>

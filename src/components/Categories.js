@@ -28,16 +28,22 @@ class Categories extends Component {
 
         return (
             <div className="categories-bar">
-                {allcategories &&
-                allcategories.map(category => (
-                    <div key={category.name} className="categories-button">
-                        <Link to={`/${category.path}`}>
-                            <button
-                                onClick={() => this.onClickCategories(category.name)}
-                                className="ui black button">{category.name}</button>
-                        </Link>
-                    </div>
-                ))}
+                {
+                    allcategories && allcategories
+                        .map(category => ( 
+                        < div
+                          key = {category.name}
+                          className = "categories-button" >
+                            <Link to = {`/${category.path}`} >
+                                <button 
+                                    onClick = { () => this.onClickCategories(category.name)}
+                                    className = "ui black button" >
+                                        {category.name} 
+                                </button> 
+                            </Link> 
+                        </div>
+                        ))
+                }
                 <Link to="/">
                     <Button
                         onClick={() => this.onClickAllCategories()}

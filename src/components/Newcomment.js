@@ -3,7 +3,6 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {guid} from "../utils";
 import {Accordion, Icon} from 'semantic-ui-react';
-
 //actions
 import {newComment} from '../actions';
 
@@ -11,6 +10,7 @@ import {newComment} from '../actions';
 class Newcomment extends Component {
 
     addNewComment = e => {
+        console.log("testando o teste")
         const parentId = this.props.parentId;
         const submitComment = {
             id: guid(),
@@ -22,14 +22,14 @@ class Newcomment extends Component {
     };
 
 
-    state = {activeIndex: 0};
+    state = {activeIndex: false};
 
-    handleClick = (e, titleProps) => {
-        const {index} = titleProps;
-        const {activeIndex} = this.state;
-        const newIndex = activeIndex === index ? -1 : index;
-
-        this.setState({activeIndex: newIndex})
+    handleClick = (titleProps) => {
+        // const {index} = titleProps;
+         const {activeIndex} = this.state;
+        // const newIndex = activeIndex === index ? -1 : index;
+        this.setState({activeIndex: !this.state.activeIndex})
+console.log(this.state)
     };
 
     render() {
@@ -39,33 +39,45 @@ class Newcomment extends Component {
 
             <div className="newcomment-container">
                 <Accordion styled>
-                    <Accordion.Title active={activeIndex === 1} index={1}
-                                     onClick={this.handleClick}>
+                    <Accordion.Title 
+                        active={activeIndex} 
+                        index={1}
+                        onClick={this.handleClick}>
                         <Icon name='dropdown'/>
                         New Comment
                     </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 1}>
+                    <Accordion.Content active={activeIndex }>
                         <div className="content active">
                             <div className="form">
-                                <form onSubmit={this.addNewComment} className="ui form">
+                                <form 
+                                    onSubmit={this.addNewComment} 
+                                    className="ui form">
                                     <div className="equal width fields">
                                         <div className="field">
                                             <label>Author</label>
                                             <div className="ui input">
-                                                <input type="text" name="author"
-                                                       className="form-control"
-                                                       placeholder="Author"/>
+                                                <input 
+                                                    type="text" 
+                                                    name="author"
+                                                    className="form-control"
+                                                    placeholder="Author"/>
                                             </div>
                                             <label>Comment</label>
                                             <div className="ui input">
-                                            <textarea type="text" name="body" className="form-control"
-                                                      placeholder="Comment"/>
+                                            <textarea 
+                                                type="text"
+                                                name="body" 
+                                                className="form-control"
+                                                placeholder="Comment"/>
                                             </div>
                                             <div className="submit">
-                                                <button type="submit"
-                                                        className="ui icon left labeled button">
-                                                    <i aria-hidden="true"
-                                                       className="checkmark icon"/>Add New Comment
+                                                <button 
+                                                    type="submit"
+                                                    className="ui icon left labeled button">
+                                                    <i 
+                                                        aria-hidden="true"
+                                                        className="checkmark icon"/>
+                                                        Add New Comment
                                                 </button>
                                             </div>
                                         </div>

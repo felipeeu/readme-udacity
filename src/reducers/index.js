@@ -29,7 +29,13 @@ function categories(state = [], action) {
 }
 //Posts
 function posts(state = [], action) {
-    const {post, posts, postId, sortType,editedPost} = action;
+    const {
+        post,
+        posts,
+        postId,
+        sortType,
+        editedPost
+    } = action;
 
     switch (action.type) {
         case GET_POST:
@@ -44,7 +50,6 @@ function posts(state = [], action) {
             return state.filter(post => post.id !== postId);
         case VOTE_POST:
             return state.map(post => {
-
                 if (post.id === action.postId) {
                     if (action.option === 'upVote') {
                         post.voteScore += 1;
@@ -69,18 +74,30 @@ function posts(state = [], action) {
     }
 }
 //Comments
-function comments(state = {}, action) {
-    const {comments, parentId, comment, id, currentComment, commentId, editedComment } = action;
+function comments(state = [], action) {
+    const {
+        comments,
+        parentId,
+        comment,
+        id,
+        currentComment,
+        commentId,
+        editedComment
+    } = action;
 
     switch (action.type) {
         case GET_COMMENT_BY_POST:
-            return {...state, [parentId]: comments};
+            return {
+                ...state,
+                [parentId]: comments
+            };
         case ADD_COMMENT :
-            return state.concat([comment]);
+            return {
+                ...state,
+                comments: state.concat([comment])
+            };
         case DELETE_COMMENT:
-            var newState = Object.assign({}, state);
-            newState.data= action.data;
-            return newState;
+            return state.filter(comment => comment.parentId !== parentId)
         case VOTE_COMMENT:
             return {
                 ...state,

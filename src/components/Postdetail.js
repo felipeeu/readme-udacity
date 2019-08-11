@@ -27,7 +27,8 @@ class Postdetail extends Component {
                 <Comments
                     category={this.props.category}
                     parentId={this.props.postId}
-                    history={this.props.history}/>
+                    history={this.props.history}
+                />
             </div>
         )
     }
@@ -40,10 +41,8 @@ function mapStateToProps({posts}, {match}) {
         allposts: posts,
         postId: match.params.postId,
         category: match.params.category,
-
     }
 }
-
 
 function mapDispatchToProps(dispatch) {
     return {
